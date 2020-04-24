@@ -1,0 +1,14 @@
+rm result.out
+clear
+bap ./hashmenot --taint-reg=malloc_result \
+       --run \
+       --run-entry-points=entry0 \
+       --primus-limit-max-length=4096 \
+       --primus-promiscuous-mode \
+       --primus-greedy-scheduler \
+       --primus-propagate-taint-from-attributes \
+       --primus-propagate-taint-to-attributes \
+       --print-bir-attr=tainted-{ptrs,regs} \
+       --dump=bir:result.out \
+       --report-progress    
+echo $(cat result.out | wc -l) lines
