@@ -2,7 +2,7 @@
 A plugin for radare2 that integrates the taint analysis capabilities of the Binary Analysis Platform (BAP) from CMU.
 
 ## Todo
- - Using test.py, go through entire API systematically. Understand how it all works. Make functions that print all the information possible
+ - Get bap-toolkit to install. Create commands for each interesting recipe.
 
  - Setup bap-ida-python, run BapIda.DEBUG=True to see what bap commands are being run
  - Figure out how proof script works. Script BAP to do stuff.
@@ -16,3 +16,5 @@ A plugin for radare2 that integrates the taint analysis capabilities of the Bina
  - Graph call taints
  - Can highlight taint by variable name
  - Can highlight taint by function argument
+ - Add commands for all bap-toolkit tools
+
