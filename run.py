@@ -2,10 +2,10 @@
 
 import os
 
-command = """
+command2 = """
 bap ./hashmenot --taint-reg=malloc_result \
        --run \
-       --run-entry-points=entry0 \
+       --run-entry-points=all-subroutines \
        --primus-limit-max-length=4096 \
        --primus-promiscuous-mode \
        --primus-greedy-scheduler \
@@ -14,6 +14,29 @@ bap ./hashmenot --taint-reg=malloc_result \
        --print-bir-attr=tainted-{ptrs,regs} \
        --dump=bir:result.out \
        --report-progress
+"""
+
+command = """
+bap ./hashmenot \
+       --taint-reg=malloc_result \
+       --propagate-taint \
+       --print-bir-attr=tainted-regs \
+       -d \
+       --dump=bir:result.out \
+"""
+
+command3 = """
+      bap ./hashmenot --run \
+              --run-entry-points=all-subroutines \
+              --primus-limit-max-length=4096 \
+              --llvm-base=0x400000 \
+              --primus-promiscuous-mode \
+              --primus-greedy-scheduler \
+              --log-dir=results2.out \
+              --print-bir-attr=tainted-{ptrs,regs} \
+              --dump=bir:result.out \
+              --report-progres
+
 """
 
 def main():

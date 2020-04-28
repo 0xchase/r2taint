@@ -8,8 +8,10 @@ import argparse
 def verify(prog, src_name, dst_name):
     src = prog.subs.find(src_name)
     dst = prog.subs.find(dst_name)
+
     if src is None or dst is None:
-        return None
+        print("Error: Src or dst not found")
+        exit()
 
     graphs = GraphsBuilder()
     graphs.run(prog)

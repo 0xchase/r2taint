@@ -17,8 +17,7 @@
 $2 >> 1 ^ $2]
 0000025a: SF := high:1[#25]
 0000025d: ZF := 0 = #25
-00001499: #1 := ~ZF
-00000267: when #1 goto %00000261
+00000267: when ~ZF goto %00000261
 00001427: goto %000010cb
 
 000010cb: 
@@ -160,8 +159,7 @@ $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 00000ede: SF := high:1[#146]
 00000ee1: ZF := 0 = #146
-0000149a: #2 := ~ZF
-00000eea: when #2 goto %00000e78
+00000eea: when ~ZF goto %00000e78
 0000142b: goto %00000dc0
 
 00000dc0: 
@@ -343,8 +341,7 @@ $2 >> 1 ^ $2]
 00000104: SF := high:1[#8]
 00000107: ZF := 0 = #8
 0000010e: RBP := RSP
-0000149b: #3 := CF | ZF
-00000118: when #3 goto %00000112
+00000118: when CF | ZF goto %00000112
 0000142e: goto %00001152
 
 00001152: 
@@ -399,8 +396,7 @@ $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 000002a0: SF := high:1[#28]
 000002a3: ZF := 0 = #28
-0000149c: #4 := ~ZF
-000002ad: when #4 goto %000002a7
+000002ad: when ~ZF goto %000002a7
 00001430: goto %000002da
 
 000002a7: 
@@ -457,6 +453,7 @@ $2 >> 1 ^ $2]
 0000068f: SF := high:1[RSP]
 00000692: ZF := 0 = RSP
 00000699: mem := mem with [RBP - 0x44, el]:u32 <- low:32[RDI]
+.tainted-regs {RSI => [%00000579]}
 000006a0: mem := mem with [RBP - 0x50, el]:u64 <- RSI
 000006a7: RAX := mem[FS_BASE + 0x28, el]:u64
 000006ae: mem := mem with [RBP - 8, el]:u64 <- RAX
@@ -482,8 +479,7 @@ $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 0000070c: SF := high:1[#64]
 0000070f: ZF := 0 = #64
-0000149d: #5 := ~ZF
-00000719: when #5 goto %00000713
+00000719: when ~ZF goto %00000713
 00001432: goto %000008f6
 
 000008f6: 
@@ -519,8 +515,7 @@ $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 00000a38: SF := high:1[#101]
 00000a3b: ZF := 0 = #101
-0000149e: #6 := ~ZF
-00000a45: when #6 goto %00000a3f
+00000a45: when ~ZF goto %00000a3f
 00001434: goto %00000bd9
 
 00000bd9: 
@@ -544,16 +539,20 @@ $2 >> 1 ^ $2]
 00000c26: RAX := mem[RBP - 0x50, el]:u64
 00000c2d: RDX := 8
 00000c34: RSI := RCX
+.tainted-regs {RAX => [%00000579]}
 00000c3b: RDI := RAX
 00000c45: RSP := RSP - 8
 00000c48: mem := mem with [RSP, el]:u64 <- 0x400BD7
 00001472: strncat_src := RSI
 00001473: strncat_n := RDX
+.tainted-regs {RDI => [%00000579]}
 00001474: strncat_dst := RDI
 00000c4b: call @strncat with return %00000c4d
 
 00000c4d: 
+.tainted-regs {RDI => [%00000579]}
 00001478: strncat_dst := RDI
+.tainted-regs {RAX => [%00000579]}
 00001477: strncat_result := RAX
 00000c55: RAX := mem[RBP - 8, el]:u64
 00000c62: RAX := RAX ^ mem[FS_BASE + 0x28, el]:u64
@@ -607,8 +606,7 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 00000ab4: SF := high:1[#104]
 00000ab7: ZF := 0 = #104
-0000149f: #7 := ~ZF
-00000ac1: when #7 goto %00000abb
+00000ac1: when ~ZF goto %00000abb
 00001436: goto %00000bb6
 
 00000bb6: 
@@ -911,8 +909,7 @@ $2 >> 1 ^ $2]
 $2 >> 1 ^ $2]
 00000413: SF := high:1[#38]
 00000416: ZF := 0 = #38
-000014a0: #8 := ~ZF
-00000420: when #8 goto %0000041a
+00000420: when ~ZF goto %0000041a
 0000143b: goto %000010a7
 
 0000041a: 
@@ -1000,34 +997,45 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 00000579: call @malloc with return %0000057b
 
 0000057b: 
+.tainted-regs {RAX => [%00000579]}
 0000148f: malloc_result := RAX
+.tainted-regs {RAX => [%00000579]}
 00000580: mem := mem with [RBP - 0x38, el]:u64 <- RAX
 0000058d: #56 := mem[RBP - 0x38, el]:u64
 00000590: CF := mem[RBP - 0x38, el]:u64 < 0
+.tainted-regs {#56 => [%00000579]}
 00000593: OF := high:1[mem[RBP - 0x38, el]:u64 & (mem[RBP - 0x38, el]:u64 ^ #56)]
+.tainted-regs {#56 => [%00000579]}
 00000596: AF := 0x10 = (0x10 & (#56 ^ mem[RBP - 0x38, el]:u64))
+.tainted-regs {$1 => [%00000579], $2 => [%00000579], #56 => [%00000579]}
 00000599: PF := ~low:1[let $1 = #56 >> 4 ^ #56 in let $2 = $1 >> 2 ^ $1 in
 $2 >> 1 ^ $2]
+.tainted-regs {#56 => [%00000579]}
 0000059c: SF := high:1[#56]
+.tainted-regs {#56 => [%00000579]}
 0000059f: ZF := 0 = #56
-000014a1: #9 := ~ZF
-000005a9: when #9 goto %000005a3
+.tainted-regs {ZF => [%00000579]}
+000005a9: when ~ZF goto %000005a3
 0000143d: goto %00001075
 
 000005a3: 
 000005b3: RDX := pad:64[mem[RBP - 0x3C, el]:u32]
 000005ba: RAX := mem[RBP - 0x38, el]:u64
 000005c1: RSI := 0
+.tainted-regs {RAX => [%00000579]}
 000005c8: RDI := RAX
 000005d2: RSP := RSP - 8
 000005d5: mem := mem with [RSP, el]:u64 <- 0x4009C1
 0000147f: memset_c := RSI
 00001480: memset_n := RDX
+.tainted-regs {RDI => [%00000579]}
 00001481: memset_buf := RDI
 000005d8: call @memset with return %000005da
 
 000005da: 
+.tainted-regs {RDI => [%00000579]}
 00001491: memset_buf := RDI
+.tainted-regs {RAX => [%00000579]}
 00001490: memset_result := RAX
 000005df: mem := mem with [RBP - 0x44, el]:u32 <- 0
 000005e7: goto %000005e3
@@ -1121,6 +1129,7 @@ $2 >> 1 ^ $2]
 0000062e: RAX := pad:64[pad:32[mem[RBP + RAX - 0x30]]]
 00000635: RAX := pad:64[extend:32[low:8[RAX]]]
 0000063c: RDX := mem[RBP - 0x38, el]:u64
+.tainted-regs {RDX => [%00000579]}
 00000643: RSI := RDX
 0000064a: RDI := pad:64[low:32[RAX]]
 00000654: RSP := RSP - 8
@@ -1203,9 +1212,11 @@ $2 >> 1 ^ $2]
 
 
 0000141c: sub memset(memset_buf, memset_c, memset_n, memset_result)
+.tainted-regs {RDI => [%00000579]}
 00001455: memset_buf :: in out u64 = RDI
 00001456: memset_c :: in u32 = RSI
 00001457: memset_n :: in u64 = RDX
+.tainted-regs {RAX => [%00000579]}
 00001458: memset_result :: out u64 = RAX
 000005ce: 
 000012d5: call mem[0x602040, el]:u64 with noreturn
@@ -1334,9 +1345,11 @@ $2 >> 1 ^ $2]
 
 
 00001425: sub strncat(strncat_dst, strncat_src, strncat_n, strncat_result)
+.tainted-regs {RDI => [%00000579]}
 00001465: strncat_dst :: in out u64 = RDI
 00001466: strncat_src :: in u64 = RSI
 00001467: strncat_n :: in u64 = RDX
+.tainted-regs {RAX => [%00000579]}
 00001468: strncat_result :: out u64 = RAX
 00000c41: 
 000012ee: call mem[0x602048, el]:u64 with noreturn

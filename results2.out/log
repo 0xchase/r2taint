@@ -1,0 +1,678 @@
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/report.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/raw.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/abi.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/byteweight.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_wandering.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/emit_ida_script.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_test.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_promiscuous.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/map_terms.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/optimization.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mips.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/warn_unused.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/strings.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trivial_condition_form.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/callsites.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_region.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_lisp.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/objdump.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/frontc_parser.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/elf_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/demangle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/beagle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/disassemble.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/run.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/bil.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/recipe_command.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ida.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_round_robin.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/dump_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ssa.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_greedy.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_limit.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/read_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/relocatable.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/arm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_dictionary.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_exploring.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cxxfilt.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cache.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trace.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/llvm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_mark_visited.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/constant_tracker.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/api.plugin
+loader.debug> Loading abi from "/home/chase/.opam/affix/lib/bap/abi.plugin"
+loader.debug> Linking library bap_abi
+loader.debug> Linking library abi_plugin
+loader.debug> Linking library bap_plugin_abi
+loader.info> Loaded abi from "/home/chase/.opam/affix/lib/bap/abi.plugin"
+loader.debug> Loading api from "/home/chase/.opam/affix/lib/bap/api.plugin"
+loader.debug> Linking library bap_api
+loader.debug> Linking library api_plugin
+loader.debug> Linking library bap_plugin_api
+loader.info> Loaded api from "/home/chase/.opam/affix/lib/bap/api.plugin"
+loader.debug> Loading arm from "/home/chase/.opam/affix/lib/bap/arm.plugin"
+loader.debug> Linking library bap-arm
+loader.debug> Linking library bap_c
+loader.debug> Linking library arm_plugin
+loader.debug> Linking library bap_plugin_arm
+loader.info> Loaded arm from "/home/chase/.opam/affix/lib/bap/arm.plugin"
+loader.debug> Loading beagle from "/home/chase/.opam/affix/lib/bap/beagle.plugin"
+loader.debug> Linking library microx
+loader.debug> Linking library bap_strings
+loader.debug> Linking library bap_primus
+loader.debug> Linking library beagle_prey
+loader.debug> Linking library beagle_plugin
+loader.debug> Linking library bap_plugin_beagle
+loader.info> Loaded beagle from "/home/chase/.opam/affix/lib/bap/beagle.plugin"
+loader.debug> Loading bil from "/home/chase/.opam/affix/lib/bap/bil.plugin"
+loader.debug> Linking library bil_plugin
+loader.debug> Linking library bap_plugin_bil
+loader.info> Loaded bil from "/home/chase/.opam/affix/lib/bap/bil.plugin"
+loader.debug> Loading byteweight from "/home/chase/.opam/affix/lib/bap/byteweight.plugin"
+loader.debug> Linking library bap_byteweight
+loader.debug> Linking library byteweight_plugin
+loader.debug> Linking library bap_plugin_byteweight
+loader.info> Loaded byteweight from "/home/chase/.opam/affix/lib/bap/byteweight.plugin"
+loader.debug> Loading cache from "/home/chase/.opam/affix/lib/bap/cache.plugin"
+loader.debug> Linking library cache_plugin
+loader.debug> Linking library bap_plugin_cache
+loader.info> Loaded cache from "/home/chase/.opam/affix/lib/bap/cache.plugin"
+loader.debug> Loading callsites from "/home/chase/.opam/affix/lib/bap/callsites.plugin"
+loader.debug> Linking library callsites_plugin
+loader.debug> Linking library bap_plugin_callsites
+loader.info> Loaded callsites from "/home/chase/.opam/affix/lib/bap/callsites.plugin"
+loader.debug> Loading constant-tracker from "/home/chase/.opam/affix/lib/bap/constant_tracker.plugin"
+loader.debug> Linking library constant_tracker_plugin
+loader.debug> Linking library bap_plugin_constant_tracker
+loader.info> Loaded constant-tracker from "/home/chase/.opam/affix/lib/bap/constant_tracker.plugin"
+loader.debug> Loading cxxfilt from "/home/chase/.opam/affix/lib/bap/cxxfilt.plugin"
+loader.debug> Linking library bap-demangle
+loader.debug> Linking library cxxfilt_plugin
+loader.debug> Linking library bap_plugin_cxxfilt
+loader.info> Loaded cxxfilt from "/home/chase/.opam/affix/lib/bap/cxxfilt.plugin"
+loader.debug> Loading demangle from "/home/chase/.opam/affix/lib/bap/demangle.plugin"
+loader.debug> Linking library demangle_plugin
+loader.debug> Linking library bap_plugin_demangle
+loader.info> Loaded demangle from "/home/chase/.opam/affix/lib/bap/demangle.plugin"
+loader.debug> Loading disassemble from "/home/chase/.opam/affix/lib/bap/disassemble.plugin"
+loader.debug> Linking library disassemble_plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/report.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/raw.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/abi.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/byteweight.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_wandering.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/emit_ida_script.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_test.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_promiscuous.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/map_terms.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/optimization.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mips.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/warn_unused.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/strings.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trivial_condition_form.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/callsites.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_region.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_lisp.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/objdump.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/frontc_parser.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/elf_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/demangle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/beagle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/disassemble.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/run.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/bil.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/recipe_command.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ida.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_round_robin.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/dump_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ssa.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_greedy.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_limit.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/read_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/relocatable.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/arm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_dictionary.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_exploring.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cxxfilt.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cache.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trace.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/llvm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_mark_visited.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/constant_tracker.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/api.plugin
+loader.debug> Linking library bap_plugin_disassemble
+loader.info> Loaded disassemble from "/home/chase/.opam/affix/lib/bap/disassemble.plugin"
+loader.debug> Loading dump-symbols from "/home/chase/.opam/affix/lib/bap/dump_symbols.plugin"
+loader.debug> Linking library dump_symbols_plugin
+loader.debug> Linking library bap_plugin_dump_symbols
+loader.info> Loaded dump-symbols from "/home/chase/.opam/affix/lib/bap/dump_symbols.plugin"
+loader.debug> Loading elf-loader from "/home/chase/.opam/affix/lib/bap/elf_loader.plugin"
+loader.debug> Linking library str
+loader.debug> Linking library bitstring
+loader.debug> Linking library elf
+loader.debug> Linking library dwarf
+loader.debug> Linking library elf_loader_plugin
+loader.debug> Linking library bap_plugin_elf_loader
+loader.info> Loaded elf-loader from "/home/chase/.opam/affix/lib/bap/elf_loader.plugin"
+loader.debug> Loading emit-ida-script from "/home/chase/.opam/affix/lib/bap/emit_ida_script.plugin"
+loader.debug> Linking library emit_ida_script_plugin
+loader.debug> Linking library bap_plugin_emit_ida_script
+loader.info> Loaded emit-ida-script from "/home/chase/.opam/affix/lib/bap/emit_ida_script.plugin"
+loader.debug> Loading frontc-parser from "/home/chase/.opam/affix/lib/bap/frontc_parser.plugin"
+loader.debug> Linking library frontc
+loader.debug> Linking library frontc_parser_plugin
+loader.debug> Linking library bap_plugin_frontc_parser
+loader.info> Loaded frontc-parser from "/home/chase/.opam/affix/lib/bap/frontc_parser.plugin"
+loader.debug> Loading ida from "/home/chase/.opam/affix/lib/bap/ida.plugin"
+loader.debug> Linking library bap_ida
+loader.debug> Linking library bap_ida_plugin
+loader.debug> Linking library bap_plugin_ida
+loader.info> Loaded ida from "/home/chase/.opam/affix/lib/bap/ida.plugin"
+loader.debug> Loading llvm from "/home/chase/.opam/affix/lib/bap/llvm.plugin"
+loader.debug> Linking library bap_llvm
+loader.debug> Linking library llvm_plugin
+loader.debug> Linking library bap_plugin_llvm
+loader.info> Loaded llvm from "/home/chase/.opam/affix/lib/bap/llvm.plugin"
+loader.debug> Loading map-terms from "/home/chase/.opam/affix/lib/bap/map_terms.plugin"
+loader.debug> Linking library bap-bml
+loader.debug> Linking library map_terms_plugin
+loader.debug> Linking library bap_plugin_map_terms
+loader.info> Loaded map-terms from "/home/chase/.opam/affix/lib/bap/map_terms.plugin"
+loader.debug> Loading mc from "/home/chase/.opam/affix/lib/bap/mc.plugin"
+loader.debug> Linking library mc_plugin
+loader.debug> Linking library bap_plugin_mc
+loader.info> Loaded mc from "/home/chase/.opam/affix/lib/bap/mc.plugin"
+loader.debug> Loading mips from "/home/chase/.opam/affix/lib/bap/mips.plugin"
+loader.debug> Linking library mips_plugin
+loader.debug> Linking library bap_plugin_mips
+loader.info> Loaded mips from "/home/chase/.opam/affix/lib/bap/mips.plugin"
+loader.debug> Loading objdump from "/home/chase/.opam/affix/lib/bap/objdump.plugin"
+loader.debug> Linking library re_pcre
+loader.debug> Linking library objdump_plugin
+loader.debug> Linking library bap_plugin_objdump
+loader.info> Loaded objdump from "/home/chase/.opam/affix/lib/bap/objdump.plugin"
+loader.debug> Loading optimization from "/home/chase/.opam/affix/lib/bap/optimization.plugin"
+loader.debug> Linking library optimization_plugin
+loader.debug> Linking library bap_plugin_optimization
+loader.info> Loaded optimization from "/home/chase/.opam/affix/lib/bap/optimization.plugin"
+loader.debug> Loading powerpc from "/home/chase/.opam/affix/lib/bap/powerpc.plugin"
+loader.debug> Linking library powerpc_plugin
+loader.debug> Linking library bap_plugin_powerpc
+loader.info> Loaded powerpc from "/home/chase/.opam/affix/lib/bap/powerpc.plugin"
+loader.debug> Loading primus-dictionary from "/home/chase/.opam/affix/lib/bap/primus_dictionary.plugin"
+loader.debug> Linking library primus_dictionary_library_plugin
+loader.debug> Linking library bap_plugin_primus_dictionary
+loader.info> Loaded primus-dictionary from "/home/chase/.opam/affix/lib/bap/primus_dictionary.plugin"
+loader.debug> Loading primus-exploring from "/home/chase/.opam/affix/lib/bap/primus_exploring.plugin"
+loader.debug> Linking library primus_exploring_scheduler_plugin
+loader.debug> Linking library bap_plugin_primus_exploring
+loader.info> Loaded primus-exploring from "/home/chase/.opam/affix/lib/bap/primus_exploring.plugin"
+loader.debug> Loading primus-greedy from "/home/chase/.opam/affix/lib/bap/primus_greedy.plugin"
+loader.debug> Linking library primus_greedy_scheduler_plugin
+loader.debug> Linking library bap_plugin_primus_greedy
+loader.info> Loaded primus-greedy from "/home/chase/.opam/affix/lib/bap/primus_greedy.plugin"
+loader.debug> Loading primus-limit from "/home/chase/.opam/affix/lib/bap/primus_limit.plugin"
+loader.debug> Linking library primus_limit
+loader.debug> Linking library bap_plugin_primus_limit
+loader.info> Loaded primus-limit from "/home/chase/.opam/affix/lib/bap/primus_limit.plugin"
+loader.debug> Loading primus-lisp from "/home/chase/.opam/affix/lib/bap/primus_lisp.plugin"
+loader.debug> Linking library primus_lisp_library_plugin
+loader.debug> Linking library bap_plugin_primus_lisp
+loader.info> Loaded primus-lisp from "/home/chase/.opam/affix/lib/bap/primus_lisp.plugin"
+loader.debug> Loading primus-loader from "/home/chase/.opam/affix/lib/bap/primus_loader.plugin"
+loader.debug> Linking library primus_loader_plugin
+loader.debug> Linking library bap_plugin_primus_loader
+loader.info> Loaded primus-loader from "/home/chase/.opam/affix/lib/bap/primus_loader.plugin"
+loader.debug> Loading primus-mark-visited from "/home/chase/.opam/affix/lib/bap/primus_mark_visited.plugin"
+loader.debug> Linking library primus_mark_visited_plugin
+loader.debug> Linking library bap_plugin_primus_mark_visited
+loader.info> Loaded primus-mark-visited from "/home/chase/.opam/affix/lib/bap/primus_mark_visited.plugin"
+loader.debug> Loading primus-powerpc from "/home/chase/.opam/affix/lib/bap/primus_powerpc.plugin"
+loader.debug> Linking library primus_powerpc_plugin
+loader.debug> Linking library bap_plugin_primus_powerpc
+loader.info> Loaded primus-powerpc from "/home/chase/.opam/affix/lib/bap/primus_powerpc.plugin"
+loader.debug> Loading primus-print from "/home/chase/.opam/affix/lib/bap/primus_print.plugin"
+loader.debug> Linking library bare
+loader.debug> Linking library primus_print_plugin
+loader.debug> Linking library bap_plugin_primus_print
+loader.info> Loaded primus-print from "/home/chase/.opam/affix/lib/bap/primus_print.plugin"
+loader.debug> Loading primus-promiscuous from "/home/chase/.opam/affix/lib/bap/primus_promiscuous.plugin"
+loader.debug> Linking library primus_promiscuous_plugin
+loader.debug> Linking library bap_plugin_primus_promiscuous
+loader.info> Loaded primus-promiscuous from "/home/chase/.opam/affix/lib/bap/primus_promiscuous.plugin"
+loader.debug> Loading primus-propagate-taint from "/home/chase/.opam/affix/lib/bap/primus_propagate_taint.plugin"
+loader.debug> Linking library taint
+loader.debug> Linking library primus_propagate_taint_plugin
+loader.debug> Linking library bap_plugin_primus_propagate_taint
+loader.info> Loaded primus-propagate-taint from "/home/chase/.opam/affix/lib/bap/primus_propagate_taint.plugin"
+loader.debug> Loading primus-region from "/home/chase/.opam/affix/lib/bap/primus_region.plugin"
+loader.debug> Linking library primus_region_library_plugin
+loader.debug> Linking library bap_plugin_primus_region
+loader.info> Loaded primus-region from "/home/chase/.opam/affix/lib/bap/primus_region.plugin"
+loader.debug> Loading primus-round-robin from "/home/chase/.opam/affix/lib/bap/primus_round_robin.plugin"
+loader.debug> Linking library primus_round_robin_scheduler_plugin
+loader.debug> Linking library bap_plugin_primus_round_robin
+loader.info> Loaded primus-round-robin from "/home/chase/.opam/affix/lib/bap/primus_round_robin.plugin"
+loader.debug> Loading primus-taint from "/home/chase/.opam/affix/lib/bap/primus_taint.plugin"
+loader.debug> Linking library primus_taint_plugin
+loader.debug> Linking library bap_plugin_primus_taint
+loader.info> Loaded primus-taint from "/home/chase/.opam/affix/lib/bap/primus_taint.plugin"
+loader.debug> Loading primus-test from "/home/chase/.opam/affix/lib/bap/primus_test.plugin"
+loader.debug> Linking library primus_test_library_plugin
+loader.debug> Linking library bap_plugin_primus_test
+loader.info> Loaded primus-test from "/home/chase/.opam/affix/lib/bap/primus_test.plugin"
+loader.debug> Loading primus-wandering from "/home/chase/.opam/affix/lib/bap/primus_wandering.plugin"
+loader.debug> Linking library primus_wandering_scheduler_plugin
+loader.debug> Linking library bap_plugin_primus_wandering
+loader.info> Loaded primus-wandering from "/home/chase/.opam/affix/lib/bap/primus_wandering.plugin"
+loader.debug> Loading primus-x86 from "/home/chase/.opam/affix/lib/bap/primus_x86.plugin"
+loader.debug> Linking library bap-x86-cpu
+loader.debug> Linking library primus_x86_plugin
+loader.debug> Linking library bap_plugin_primus_x86
+loader.info> Loaded primus-x86 from "/home/chase/.opam/affix/lib/bap/primus_x86.plugin"
+loader.debug> Loading print from "/home/chase/.opam/affix/lib/bap/print.plugin"
+loader.debug> Linking library text-tags
+loader.debug> Linking library print_plugin
+loader.debug> Linking library bap_plugin_print
+loader.info> Loaded print from "/home/chase/.opam/affix/lib/bap/print.plugin"
+loader.debug> Loading propagate-taint from "/home/chase/.opam/affix/lib/bap/propagate_taint.plugin"
+loader.debug> Linking library propagate_taint_plugin
+loader.debug> Linking library bap_plugin_propagate_taint
+loader.info> Loaded propagate-taint from "/home/chase/.opam/affix/lib/bap/propagate_taint.plugin"
+loader.debug> Loading raw from "/home/chase/.opam/affix/lib/bap/raw.plugin"
+loader.debug> Linking library bap_raw_plugin
+loader.debug> Linking library bap_plugin_raw
+loader.info> Loaded raw from "/home/chase/.opam/affix/lib/bap/raw.plugin"
+loader.debug> Loading read-symbols from "/home/chase/.opam/affix/lib/bap/read_symbols.plugin"
+loader.debug> Linking library read_symbols_plugin
+loader.debug> Linking library bap_plugin_read_symbols
+loader.info> Loaded read-symbols from "/home/chase/.opam/affix/lib/bap/read_symbols.plugin"
+loader.debug> Loading recipe-command from "/home/chase/.opam/affix/lib/bap/recipe_command.plugin"
+loader.debug> Linking library bap_recipe_command_plugin
+loader.debug> Linking library bap_plugin_recipe_command
+loader.info> Loaded recipe-command from "/home/chase/.opam/affix/lib/bap/recipe_command.plugin"
+loader.debug> Loading relocatable from "/home/chase/.opam/affix/lib/bap/relocatable.plugin"
+loader.debug> Linking library relocatable_plugin
+loader.debug> Linking library bap_plugin_relocatable
+loader.info> Loaded relocatable from "/home/chase/.opam/affix/lib/bap/relocatable.plugin"
+loader.debug> Loading report from "/home/chase/.opam/affix/lib/bap/report.plugin"
+loader.debug> Linking library report_plugin
+loader.debug> Linking library bap_plugin_report
+loader.info> Loaded report from "/home/chase/.opam/affix/lib/bap/report.plugin"
+loader.debug> Loading run from "/home/chase/.opam/affix/lib/bap/run.plugin"
+loader.debug> Linking library run_plugin
+loader.debug> Linking library bap_plugin_run
+loader.info> Loaded run from "/home/chase/.opam/affix/lib/bap/run.plugin"
+loader.debug> Loading ssa from "/home/chase/.opam/affix/lib/bap/ssa.plugin"
+loader.debug> Linking library ssa_plugin
+loader.debug> Linking library bap_plugin_ssa
+loader.info> Loaded ssa from "/home/chase/.opam/affix/lib/bap/ssa.plugin"
+loader.debug> Loading strings from "/home/chase/.opam/affix/lib/bap/strings.plugin"
+loader.debug> Linking library strings_plugin
+loader.debug> Linking library bap_plugin_strings
+loader.info> Loaded strings from "/home/chase/.opam/affix/lib/bap/strings.plugin"
+loader.debug> Loading taint from "/home/chase/.opam/affix/lib/bap/taint.plugin"
+loader.debug> Linking library taint_plugin
+loader.debug> Linking library bap_plugin_taint
+loader.info> Loaded taint from "/home/chase/.opam/affix/lib/bap/taint.plugin"
+loader.debug> Loading trace from "/home/chase/.opam/affix/lib/bap/trace.plugin"
+loader.debug> Linking library traces
+loader.debug> Linking library trace_plugin
+loader.debug> Linking library bap_plugin_trace
+loader.info> Loaded trace from "/home/chase/.opam/affix/lib/bap/trace.plugin"
+loader.debug> Loading trivial-condition-form from "/home/chase/.opam/affix/lib/bap/trivial_condition_form.plugin"
+loader.debug> Linking library trivial_condition_form_plugin
+loader.debug> Linking library bap_plugin_trivial_condition_form
+loader.info> Loaded trivial-condition-form from "/home/chase/.opam/affix/lib/bap/trivial_condition_form.plugin"
+loader.debug> Loading warn-unused from "/home/chase/.opam/affix/lib/bap/warn_unused.plugin"
+loader.debug> Linking library warn_unused_plugin
+loader.debug> Linking library bap_plugin_warn_unused
+loader.info> Loaded warn-unused from "/home/chase/.opam/affix/lib/bap/warn_unused.plugin"
+loader.debug> Loading x86 from "/home/chase/.opam/affix/lib/bap/x86.plugin"
+loader.debug> Linking library x86_plugin
+loader.debug> Linking library bap_plugin_x86
+loader.info> Loaded x86 from "/home/chase/.opam/affix/lib/bap/x86.plugin"
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/report.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/raw.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/abi.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/byteweight.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_wandering.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/emit_ida_script.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_test.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_promiscuous.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/map_terms.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/optimization.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mips.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/warn_unused.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/strings.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trivial_condition_form.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/callsites.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_region.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_lisp.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/objdump.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/frontc_parser.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/elf_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/demangle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/beagle.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/disassemble.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/run.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/bil.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/propagate_taint.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_x86.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/recipe_command.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ida.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_round_robin.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/dump_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/ssa.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/mc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_greedy.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_limit.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/print.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_loader.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/read_symbols.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/relocatable.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/arm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_dictionary.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_powerpc.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_exploring.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cxxfilt.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/cache.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/trace.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/llvm.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/primus_mark_visited.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/constant_tracker.plugin
+loader.debug> Opening bundle /home/chase/.opam/affix/lib/bap/api.plugin
+ida.warning> idal/idat must exist
+ida.error> "IDA detection failed with error code 2: idal/idat must exist". Service not registered.
+bil.info> providing a lifter for all BIL lifters
+primus-greedy.info> enabling the scheduler
+powerpc.info> Providing PowerPC semantics in BIL
+cache.info> caching to /home/chase/.cache/bap
+disassemble.info> Setting GC parameters
+disassemble.info> looking for knowledge with digest 52ad9337a1a57a38a54bd289509a6e31
+disassemble.info> importing knowledge from cache
+bap.warning> region is not mapped to memory
+bap.warning> region is not mapped to memory
+bap.warning> region is not mapped to memory
+bap.warning> region is not mapped to memory
+bap.warning> region is not mapped to memory
+bap.warning> region is not mapped to memory
+bap.info> providing rooter and symbolizer from image
+objdump.info> 4006d0 => _init
+objdump.info> 4006f0 => .plt
+objdump.info> 400700 => free
+objdump.info> 400710 => puts
+objdump.info> 400720 => strlen
+objdump.info> 400730 => __stack_chk_fail
+objdump.info> 400740 => printf
+objdump.info> 400750 => memset
+objdump.info> 400760 => strncat
+objdump.info> 400770 => __libc_start_main
+objdump.info> 400780 => fgets
+objdump.info> 400790 => strcmp
+objdump.info> 4007a0 => malloc
+objdump.info> 4007b0 => fflush
+objdump.info> 4007c0 => sprintf
+objdump.info> 4007d0 => __gmon_start__
+objdump.info> 4007e0 => _start
+objdump.info> 400810 => deregister_tm_clones
+objdump.info> 400850 => register_tm_clones
+objdump.info> 400890 => __do_global_dtors_aux
+objdump.info> 4008b0 => frame_dummy
+objdump.info> 4008d6 => main
+objdump.info> 400a70 => hash
+objdump.info> 400bf0 => __libc_csu_init
+objdump.info> 400c60 => __libc_csu_fini
+objdump.info> 400c64 => _fini
+x86.info> can't detect ABI, falling back to default
+x86.info> using sysv ABI
+x86.info> applying sysv to __libc_start_main
+x86.info> applying sysv to fgets
+x86.info> applying sysv to free
+x86.info> applying sysv to main
+x86.info> applying sysv to malloc
+x86.info> applying sysv to memset
+x86.info> applying sysv to printf
+x86.info> applying sysv to puts
+x86.info> applying sysv to sprintf
+x86.info> applying sysv to strcmp
+x86.info> applying sysv to strlen
+x86.info> applying sysv to strncat
+trivial-condition-form.info> translating the program into the Trivial Condition Form (TCF)
+run.info> The Lisp Machine program is well-typed
+run.info> Fork 1: starting from the %000013fd entry point
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 10 from 1
+primus-greedy.info> killing previous machine 1
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 11 from 10
+primus-greedy.info> killing previous machine 10
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 9 from 11
+primus-greedy.info> killing previous machine 11
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 8 from 9
+primus-greedy.info> killing previous machine 9
+primus-limit.info> terminating machine 8 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 20 from 8
+primus-greedy.info> killing previous machine 8
+primus-limit.info> terminating machine 20 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 19 from 20
+primus-greedy.info> killing previous machine 20
+primus-limit.info> terminating machine 19 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 23 from 19
+primus-greedy.info> killing previous machine 19
+primus-limit.info> terminating machine 23 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 24 from 23
+primus-greedy.info> killing previous machine 23
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 22 from 24
+primus-greedy.info> killing previous machine 24
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 21 from 22
+primus-greedy.info> killing previous machine 22
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 18 from 21
+primus-greedy.info> killing previous machine 21
+primus-limit.info> terminating machine 18 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 17 from 18
+primus-greedy.info> killing previous machine 18
+primus-limit.info> terminating machine 17 because a maximum number of expressions has been reached
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 16 from 17
+primus-greedy.info> killing previous machine 17
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 15 from 16
+primus-greedy.info> killing previous machine 16
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 28 from 15
+primus-greedy.info> killing previous machine 15
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 27 from 28
+primus-greedy.info> killing previous machine 28
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 26 from 27
+primus-greedy.info> killing previous machine 27
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 30 from 26
+primus-greedy.info> killing previous machine 26
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 29 from 30
+primus-greedy.info> killing previous machine 30
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 25 from 29
+primus-greedy.info> killing previous machine 29
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 14 from 25
+primus-greedy.info> killing previous machine 25
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 13 from 14
+primus-greedy.info> killing previous machine 14
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 12 from 13
+primus-greedy.info> killing previous machine 13
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 7 from 12
+primus-greedy.info> killing previous machine 12
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 6 from 7
+primus-greedy.info> killing previous machine 7
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 31 from 6
+primus-greedy.info> killing previous machine 6
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 5 from 31
+primus-greedy.info> killing previous machine 31
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 4 from 5
+primus-greedy.info> killing previous machine 5
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 3 from 4
+primus-greedy.info> killing previous machine 4
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 2 from 3
+primus-greedy.info> killing previous machine 3
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 32 from 2
+primus-greedy.info> killing previous machine 2
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 33 from 32
+primus-greedy.info> killing previous machine 32
+run.info> execution from %000013fd terminated with: Halt 
+primus-greedy.info> switch to machine 0 from 33
+primus-greedy.info> killing previous machine 33
+primus-greedy.info> switch to machine 0 from 34
+primus-greedy.info> killing previous machine 34
+run.info> Fork 35: starting from the %00001424 entry point
+primus-greedy.info> switch to machine 0 from 35
+primus-greedy.info> killing previous machine 35
+run.info> Fork 36: starting from the %00001423 entry point
+primus-greedy.info> switch to machine 0 from 36
+primus-greedy.info> killing previous machine 36
+run.info> Fork 37: starting from the %0000141e entry point
+primus-greedy.info> switch to machine 0 from 37
+primus-greedy.info> killing previous machine 37
+primus-greedy.info> switch to machine 0 from 38
+primus-greedy.info> killing previous machine 38
+run.info> Fork 39: starting from the %0000141c entry point
+primus-greedy.info> switch to machine 0 from 39
+primus-greedy.info> killing previous machine 39
+run.info> Fork 40: starting from the %0000141b entry point
+primus-greedy.info> switch to machine 0 from 40
+primus-greedy.info> killing previous machine 40
+primus-greedy.info> switch to machine 0 from 41
+primus-greedy.info> killing previous machine 41
+primus-greedy.info> switch to machine 0 from 42
+primus-greedy.info> killing previous machine 42
+primus-greedy.info> switch to machine 0 from 43
+primus-greedy.info> killing previous machine 43
+run.info> Fork 44: starting from the %00001407 entry point
+primus-greedy.info> switch to machine 0 from 44
+primus-greedy.info> killing previous machine 44
+run.info> Fork 45: starting from the %00001403 entry point
+primus-greedy.info> switch to machine 0 from 45
+primus-greedy.info> killing previous machine 45
+primus-greedy.info> switch to machine 0 from 46
+primus-greedy.info> killing previous machine 46
+primus-greedy.info> switch to machine 0 from 47
+primus-greedy.info> killing previous machine 47
+run.info> Fork 48: starting from the %00001404 entry point
+primus-greedy.info> switch to machine 50 from 48
+primus-greedy.info> killing previous machine 48
+primus-greedy.info> switch to machine 51 from 50
+primus-greedy.info> killing previous machine 50
+primus-greedy.info> switch to machine 49 from 51
+primus-greedy.info> killing previous machine 51
+primus-greedy.info> switch to machine 52 from 49
+primus-greedy.info> killing previous machine 49
+primus-greedy.info> switch to machine 53 from 52
+primus-greedy.info> killing previous machine 52
+run.info> execution from %00001404 terminated with: Halt 
+primus-greedy.info> switch to machine 0 from 53
+primus-greedy.info> killing previous machine 53
+primus-greedy.info> switch to machine 0 from 54
+primus-greedy.info> killing previous machine 54
+run.info> Fork 55: starting from the %000013f8 entry point
+run.info> execution from %000013f8 terminated with: primus runtime error - File "/home/chase/.opam/affix/share/primus/site-lisp/libc-init.lisp", line 7, characters 0-159
+invoke-subroutine: no function for 0 
+primus-greedy.info> switch to machine 0 from 55
+primus-greedy.info> killing previous machine 55
+run.info> Fork 56: starting from the %000013fa entry point
+primus-greedy.info> switch to machine 0 from 56
+primus-greedy.info> killing previous machine 56
+run.info> Fork 57: starting from the %000013f4 entry point
+primus-greedy.info> switch to machine 62 from 57
+primus-greedy.info> killing previous machine 57
+primus-limit.info> terminating machine 62 because a maximum number of expressions has been reached
+run.info> execution from %000013f4 terminated with: Halt 
+primus-greedy.info> switch to machine 61 from 62
+primus-greedy.info> killing previous machine 62
+run.info> execution from %000013f4 terminated with: Halt 
+primus-greedy.info> switch to machine 60 from 61
+primus-greedy.info> killing previous machine 61
+primus-greedy.info> switch to machine 59 from 60
+primus-greedy.info> killing previous machine 60
+primus-greedy.info> switch to machine 63 from 59
+primus-greedy.info> killing previous machine 59
+run.info> execution from %000013f4 terminated with: Halt 
+primus-greedy.info> switch to machine 58 from 63
+primus-greedy.info> killing previous machine 63
+run.info> execution from %000013f4 terminated with: Halt 
+primus-greedy.info> switch to machine 0 from 58
+primus-greedy.info> killing previous machine 58
+primus-greedy.info> switch to machine 0 from 64
+primus-greedy.info> killing previous machine 64
+primus-greedy.info> switch to machine 0 from 65
+primus-greedy.info> killing previous machine 65
+run.info> Fork 66: starting from the %000013f3 entry point
+run.info> execution from %000013f3 terminated with: Halt 
+primus-greedy.info> switch to machine 0 from 66
+primus-greedy.info> killing previous machine 66
+run.info> Fork 67: starting from the %000013ef entry point
+primus-greedy.info> switch to machine 0 from 67
+primus-greedy.info> killing previous machine 67
+primus-greedy.info> switch to machine 0 from 68
+primus-greedy.info> killing previous machine 68
+run.info> Fork 69: starting from the %000013ee entry point
+primus-greedy.info> switch to machine 0 from 69
+primus-greedy.info> killing previous machine 69
+run.info> all toplevel machines done, halting
+primus-greedy.info> no more pending machines
+run.info> Ok, we've terminated normally
