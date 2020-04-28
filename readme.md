@@ -14,3 +14,5 @@ A plugin for radare2 that integrates the taint analysis capabilities of the Bina
  - List functions tainted by user input
  - Search for memory leaking issues
  - Graph call taints
+ - Can highlight taint by variable name
+ - Can highlight taint by function argument

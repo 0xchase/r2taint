@@ -21,6 +21,7 @@ bap ./hashmenot \
        --taint-reg=malloc_result \
        --propagate-taint \
        --print-bir-attr=tainted-regs \
+       --print-bir-attr=address \
        -d \
        --dump=bir:result.out \
 """
