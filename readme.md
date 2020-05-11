@@ -18,3 +18,15 @@ A plugin for radare2 that integrates the taint analysis capabilities of the Bina
  - Can highlight taint by function argument
  - Add commands for all bap-toolkit tools
 
+## Commands
+ - Tm: Taint mallocs
+ - Tmc: Trace taint between malloc and other system calls
+ - Tml: List malloc taints
+ - Tms: Seek to malloc taint
+ - Ta: Taint at address
+ - Tas: Taint between address and system calls
+
+ - Something to taint arguments
+ - Tr: Taint register at seek
+ - Tp: Taint pointer at seek
+ - Tv: Taint local variable by name
