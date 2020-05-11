@@ -62,90 +62,134 @@ def r2bap(_):
             return 1
         elif cmd[0] == "Th":
             taint_highlight()
+        elif cmd[0] == "Tp":
+            taint_pointer(cmd[1])
+        elif cmd[0] == "Tpc":
+            taint_pointer_call(cmd[1])
+        elif cmd[0] == "Tpl":
+            try:
+                for key in taints:
+                    for e in taints[key]:
+                        if "p" in key:
+                            print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
+            except:
+                pass
+        elif cmd[0] == "Tp-":
+            for e in taints[r.cmd("s").strip("\n") + "p"]:
+                r.cmd("CC- @ " + e)
+                r.cmd("ecH- @ " + e)
+            taints[r.cmd("s").strip("\n") + "p"] = []
         elif cmd[0] == "Tr":
-            try:
-                taint_register(cmd[1])
-            except Exception as e:
-                print(e)
+            taint_register(cmd[1])
         elif cmd[0] == "Trc":
-            try:
-                taint_register_call(cmd[1])
-            except Exception as e:
-                print(e)
+            taint_register_call(cmd[1])
         elif cmd[0] == "Trl":
             try:
-                for e in taints[r.cmd("s").strip("\n")]:
-                    print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
-            except Exception as e:
-                print(e)
+                for key in taints:
+                    for e in taints[key]:
+                        if not "p" in key and not "malloc" in key:
+                            print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
+            except:
+                pass
         elif cmd[0] == "Tr-":
-            try:
-                for e in taints[r.cmd("s").strip("\n")]:
-                    r.cmd("CC- @ " + e)
-                    r.cmd("ecH- @ " + e)
-                taints[r.cmd("s").strip("\n")] = []
-            except Exception as e:
-                print(e)
+            for e in taints[r.cmd("s").strip("\n")]:
+                r.cmd("CC- @ " + e)
+                r.cmd("ecH- @ " + e)
+            taints[r.cmd("s").strip("\n")] = []
         elif cmd[0] == "Tr--":
-            try:
-                for key in taints:
-                    if not key == "malloc":
-                        for e in taints[key]:
-                            r.cmd("CC- @ " + e)
-                            r.cmd("ecH- @ " + e)
-                        taints[key] = []
-            except Exception as e:
-                print(e)
-        elif cmd[0] == "Tm":
-            try:
-                taint_malloc(cmd[1])
-            except Exception as e:
-                print(e)
-        elif cmd[0] == "Tmc":
-            try:
-                taint_malloc_call(cmd[1])
-            except Exception as e:
-                print(e)
-        elif cmd[0] == "Tml":
-            try:
-                for e in taints["malloc"]:
-                    print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
-            except Exception as e:
-                print(e)
-        elif cmd[0] == "Tm-":
-            try:
-                for e in taints["malloc"]:
-                    r.cmd("CC- @ " + e)
-                    r.cmd("ecH- @ " + e)
-                taints["malloc"] = []
-            except Exception as e:
-                print(e)
-        elif cmd[0] == "T-":
-            try:
-                for key in taints:
+            for key in taints:
+                if not key == "malloc" and not "p" in key:
                     for e in taints[key]:
                         r.cmd("CC- @ " + e)
                         r.cmd("ecH- @ " + e)
                     taints[key] = []
-            except Exception as e:
-                print(e)
+        elif cmd[0] == "Tp--":
+            for key in taints:
+                if "p" in key:
+                    for e in taints[key]:
+                        r.cmd("CC- @ " + e)
+                        r.cmd("ecH- @ " + e)
+                    taints[key] = []
+        elif cmd[0] == "Tm":
+            taint_malloc(cmd[1])
+        elif cmd[0] == "Tmc":
+            taint_malloc_call(cmd[1])
+        elif cmd[0] == "Tml":
+            for e in taints["malloc"]:
+                print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
+        elif cmd[0] == "Tm-":
+            for e in taints["malloc"]:
+                r.cmd("CC- @ " + e)
+                r.cmd("ecH- @ " + e)
+            taints["malloc"] = []
+        elif cmd[0] == "T-":
+            for key in taints:
+                for e in taints[key]:
+                    r.cmd("CC- @ " + e)
+                    r.cmd("ecH- @ " + e)
+                taints[key] = []
+        elif cmd[0] == "Tl":
+            try:
+                for key in taints:
+                    for e in taints[key]:
+                        print(colored(e, "green") + ": " + r.cmd("CC. @ " + e).strip("\n"))
+            except:
+                pass
         else:
             print(colored("Taint analysis commands using BAP", "yellow"))
-            print("| Tm              " + colored("Propogate taint from mallocs and add comments at tainted instructions", "green"))
-            print("| Tmc             " + colored("Propogate taint from mallocs and add comments only at tainted calls", "green"))
-            print("| Tm-             " + colored("Remove taints due to mallocs", "green"))
-            print("| Tml             " + colored("List taints from mallocs", "green"))
-            print("| Tr              " + colored("Propogate taint from register at current seek and add comments at tainted instructions", "green"))
-            print("| Trc             " + colored("Propogate taint from register at current seek and add comments only at tainted calls", "green"))
-            print("| Tr-             " + colored("Remove taints due to register at current seek", "green"))
-            print("| Tr--            " + colored("Remove all taints due to register sources", "green"))
-            print("| Trl             " + colored("List taints due to register at current seek", "green"))
-            print("| T-              " + colored("Remove all taint information", "green"))
+            temp = 0
+            if "Tm" in cmd[0]:
+                temp = 1
+            elif "Tr" in cmd[0]:
+                temp = 2
+            elif "Tp" in cmd[0]:
+                temp = 3
+
+            if temp == 0 or temp == 2:
+                print("| Tr"+colored("[?]", "yellow")+"           " + colored("Propogate taint from register and mark tainted instructions", "green"))
+                if temp == 2:
+                    print("| Trc             " + colored("Propogate taint from register and mark tainted calls", "green"))
+                    print("| Trl             " + colored("List taints due to register", "green"))
+                    print("| Tr-             " + colored("Remove taints due to register at current seek", "green"))
+                    print("| Tr--            " + colored("Remove all taints due to register sources", "green"))
+
+            if temp == 0 or temp == 3:
+                print("| Tp"+colored("[?]", "yellow")+"           " + colored("Propogate taint from pointer and mark tainted instructions", "green"))
+                if temp == 3:
+                    print("| Tpc             " + colored("Propogate taint from pointer and mark tainted calls", "green"))
+                    print("| Tpl             " + colored("List taints due to register", "green"))
+                    print("| Tp-             " + colored("Remove taints due to pointer", "green"))
+                    print("| Tp--            " + colored("Remove all taints due to pointer sources", "green"))
+
+            if temp == 0 or temp == 1:
+                print("| Tm"+colored("[?]", "yellow")+"           " + colored("Propogate taint from mallocs and mark tainted instructions", "green"))
+                if temp == 1:
+                    print("| Tmc             " + colored("Propogate taint from mallocs and mark tainted calls", "green"))
+                    print("| Tml             " + colored("List taints from mallocs", "green"))
+                    print("| Tm-             " + colored("Remove taints due to mallocs", "green"))
+
+            if temp == 0:
+                print("| Tl              " + colored("List all taint information", "green"))
+                print("| T-              " + colored("Remove all taint information", "green"))
+
+        rehighlight()
 
         return 1
 
-    def taint_highlight():
-        print("Unimplemented")
+    def rehighlight():
+        for key in taints:
+            for addr in taints[key]:
+                r.cmd("ecH- @ " + addr)
+        for key in taints:
+            if "malloc" in key:
+                for addr in taints[key]:
+                    r.cmd("ecHi red @ " + addr)
+            elif "p" in key:
+                for addr in taints[key]:
+                    r.cmd("ecHi blue @ " + addr)
+            else:
+                for addr in taints[key]:
+                    r.cmd("ecHi blue @ " + addr)
 
     def taint_register_call(name):
         address = r.cmd("s").strip("\n")
@@ -175,7 +219,7 @@ def r2bap(_):
                 found_taints.append(last_address)
                 r.cmd("s " + last_address)
                 if "call" in r.cmd("pd 1"):
-                    r.cmd("ecHi blue")
+                    found = True
                     r.cmd("CC-")
                     taints[address].append(last_address)
 
@@ -189,7 +233,10 @@ def r2bap(_):
                         print(colored(last_address, "green") + ": tainted by " + name)
 
         r.cmd("s " + address)
-        print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        if found:
+            print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        else:
+            print(colored("No tainted calls found", "yellow"))
 
     def taint_register(name):
         address = r.cmd("s").strip("\n")
@@ -215,24 +262,117 @@ def r2bap(_):
             if ".address" in line:
                 last_address = line.split(" ")[1]
             if "taint" in line and not last_address in found_taints:
-                reg = line.split("{")[1].split("=")[0]
+                found = True
                 found_taints.append(last_address)
                 r.cmd("s " + last_address)
-                r.cmd("ecHi blue")
                 r.cmd("CC-")
                 taints[address].append(last_address)
 
                 if name == None:
-                    r.cmd("CC " + reg + "tainted by " + address)
+                    r.cmd("CC Tainted by " + address)
                 else:
-                    r.cmd("CC " + reg + "tainted by " + name)
+                    r.cmd("CC Tainted by " + name)
                 if name == None:
                     print(colored(last_address, "green") + ": tainted by register at " + address)
                 else:
                     print(colored(last_address, "green") + ": tainted by " + name)
 
         r.cmd("s " + address)
-        print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        if found:
+            print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        else:
+            print(colored("No tainted instructions found", "yellow"))
+
+    def taint_pointer(name):
+        address = r.cmd("s").strip("\n")
+        taints[address + "p"] = []
+        found_taints = []
+        print("Running BAP...")
+        stdout, stderr = subprocess.Popen(
+                ["bap", "./hashmenot", 
+                "--taint-ptr=" + address,
+                "--llvm-base=0x400000", 
+                "--propagate-taint", 
+                "--print-bir-attr=tainted-ptrs", 
+                "--print-bir-attr=address",
+                "-d", 
+                "--dump=bir:result.out"], 
+                stdout=subprocess.PIPE).communicate()
+
+        lines = stdout.decode().split("\n")
+        found = False
+        last_address = ""
+
+        for line in stdout.decode().split("\n"):
+            if ".address" in line:
+                last_address = line.split(" ")[1]
+            if "taint" in line and not last_address in found_taints:
+                found = True
+                found_taints.append(last_address)
+                r.cmd("s " + last_address)
+                r.cmd("CC-")
+                taints[address + "p"].append(last_address)
+
+                if name == None:
+                    r.cmd("CC " + "Tainted by pointer at " + address)
+                else:
+                    r.cmd("CC " + "Tainted by " + name)
+                if name == None:
+                    print(colored(last_address, "green") + ": pointing at tainted value due to " + address)
+                else:
+                    print(colored(last_address, "green") + ": pointing at tainted value due to " + name)
+
+        r.cmd("s " + address)
+        if found:
+            print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        else:
+            print(colored("No tainted instructions found", "yellow"))
+
+    def taint_pointer_call(name):
+        address = r.cmd("s").strip("\n")
+        taints[address + "p"] = []
+        found_taints = []
+        print("Running BAP...")
+        stdout, stderr = subprocess.Popen(
+                ["bap", "./hashmenot", 
+                "--taint-ptr=" + address,
+                "--llvm-base=0x400000", 
+                "--propagate-taint", 
+                "--print-bir-attr=tainted-ptrs", 
+                "--print-bir-attr=address",
+                "-d", 
+                "--dump=bir:result.out"], 
+                stdout=subprocess.PIPE).communicate()
+
+        lines = stdout.decode().split("\n")
+        found = False
+        last_address = ""
+
+        for line in stdout.decode().split("\n"):
+            if ".address" in line:
+                last_address = line.split(" ")[1]
+            if "taint" in line and not last_address in found_taints:
+                found_taints.append(last_address)
+                r.cmd("s " + last_address)
+                if "call" in r.cmd("pd 1"):
+                    found = True
+                    r.cmd("CC-")
+                    taints[address + "p"].append(last_address)
+
+                    if name == None:
+                        r.cmd("CC " + "Tainted pointer from source " + address)
+                    else:
+                        r.cmd("CC " + "Tainted pointer from source " + name)
+                    if name == None:
+                        print(colored(last_address, "green") + ": pointing at tainted value due to " + address)
+                    else:
+                        print(colored(last_address, "green") + ": pointing at tainted value due to " + name)
+
+        r.cmd("s " + address)
+        if found:
+            print(colored("\nAdded comments at instructions tainted by register at " + last_address + "\n", "yellow"))
+        else:
+            print(colored("No tainted calls found", "yellow"))
 
     def taint_malloc(name):
         print("Running BAP...")
@@ -258,15 +398,18 @@ def r2bap(_):
             if ".address" in line:
                 last_address = line.split(" ")[1]
             if "taint" in line and not last_address in found_taints:
+                found = True
                 found_taints.append(last_address)
                 reg = line.split("{")[1].split("=")[0]
                 r.cmd("s " + last_address)
-                r.cmd("ecHi red")
                 r.cmd("CC-")
-                r.cmd("CC " + reg + "tainted by malloc")
+                r.cmd("CC Tainted by malloc")
                 taints["malloc"].append(last_address)
                 print(colored(last_address, "green") + ": tainted by malloc")
-        print(colored("\nAdded comments at instructions tainted by malloc\n", "yellow"))
+        if found:
+            print(colored("\nAdded comments at instructions tainted by malloc\n", "yellow"))
+        else:
+            print(colored("No tainted instructions found", "yellow"))
         r.cmd("s " + address)
 
     def taint_malloc_call(name):
@@ -297,12 +440,15 @@ def r2bap(_):
                 reg = line.split("{")[1].split("=")[0]
                 r.cmd("s " + last_address)
                 if "call" in r.cmd("pd 1"):
-                    r.cmd("ecHi red")
+                    found = True
                     r.cmd("CC-")
-                    r.cmd("CC " + reg + "tainted by malloc")
+                    r.cmd("CC Tainted by malloc")
                     taints["malloc"].append(last_address)
                     print(colored(last_address, "green") + ": tainted by malloc")
-        print(colored("\nAdded comments at instructions tainted by malloc\n", "yellow"))
+        if found:
+            print(colored("\nAdded comments at instructions tainted by malloc\n", "yellow"))
+        else:
+            print(colored("No tainted calls found", "yellow"))
         r.cmd("s " + address)
 
     return {"name": "r2bap",
