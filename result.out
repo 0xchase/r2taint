@@ -686,13 +686,9 @@ $2 >> 1 ^ $2]
 
 .address 0x400780
 00001403: sub fgets(fgets_s, fgets_size, fgets_stream, fgets_result)
-.tainted-regs {RDI => [%000003f7]}
 0000144b: fgets_s :: in out u64 = RDI
-.tainted-regs {RSI => [%000003f7]}
 0000144c: fgets_size :: in u32 = RSI
-.tainted-regs {RDX => [%000003f7]}
 0000144d: fgets_stream :: in out u64 = RDX
-.tainted-regs {RAX => [%000003f7]}
 0000144e: fgets_result :: out u64 = RAX
 .address 0x400780
 000003ed: 
@@ -796,52 +792,38 @@ $2 >> 1 ^ $2]
 .address 0x400A70
 00000650: 
 .address 0x400A70
-.tainted-regs {RBP => [%000003f4]}
 00000662: #60 := RBP
 .address 0x400A70
-.tainted-regs {RSP => [%000003f4]}
 00000665: RSP := RSP - 8
 .address 0x400A70
-.tainted-regs {RSP => [%000003f4], #60 => [%000003f4]}
 00000668: mem := mem with [RSP, el]:u64 <- #60
 .address 0x400A71
-.tainted-regs {RSP => [%000003f4]}
 0000066f: RBP := RSP
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4]}
 0000067d: #61 := RSP
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4]}
 00000680: RSP := RSP - 0x50
 .address 0x400A74
-.tainted-regs {#61 => [%000003f4]}
 00000683: CF := #61 < 0x50
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4], #61 => [%000003f4]}
 00000686: OF := high:1[(#61 ^ 0x50) & (#61 ^ RSP)]
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4], #61 => [%000003f4]}
 00000689: AF := 0x10 = (0x10 & (RSP ^ #61 ^ 0x50))
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4], $1 => [%000003f4], $2 => [%000003f4]}
 0000068c: PF := ~low:1[let $1 = RSP >> 4 ^ RSP in let $2 = $1 >> 2 ^ $1 in
 $2 >> 1 ^ $2]
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4]}
 0000068f: SF := high:1[RSP]
 .address 0x400A74
-.tainted-regs {RSP => [%000003f4]}
 00000692: ZF := 0 = RSP
 .address 0x400A78
-.tainted-regs {RBP => [%000003f4]}
 00000699: mem := mem with [RBP - 0x44, el]:u32 <- low:32[RDI]
 .address 0x400A7B
-.tainted-regs {RBP => [%000003f4]}
+.tainted-regs {RSI => [%00000579]}
 000006a0: mem := mem with [RBP - 0x50, el]:u64 <- RSI
 .address 0x400A7F
 000006a7: RAX := mem[FS_BASE + 0x28, el]:u64
 .address 0x400A88
-.tainted-regs {RBP => [%000003f4]}
 000006ae: mem := mem with [RBP - 8, el]:u64 <- RAX
 .address 0x400A8C
 000006bb: RAX := 0
@@ -858,16 +840,12 @@ $2 >> 1 ^ $2]
 .address 0x400A8C
 000006cd: SF := 0
 .address 0x400A8E
-.tainted-regs {RBP => [%000003f4]}
 000006d4: mem := mem with [RBP - 0x28, el]:u64 <- 0x400D46
 .address 0x400A96
-.tainted-regs {RBP => [%000003f4]}
 000006db: mem := mem with [RBP - 0x20, el]:u64 <- 0
 .address 0x400A9E
-.tainted-regs {RBP => [%000003f4]}
 000006e2: mem := mem with [RBP - 0x18] <- 0
 .address 0x400AA2
-.tainted-regs {RBP => [%000003f4]}
 000006e9: mem := mem with [RBP - 0x34, el]:u32 <- 0
 .address 0x400AA9
 000006f1: goto %000006ed
@@ -875,16 +853,12 @@ $2 >> 1 ^ $2]
 .address 0x400AEE
 000006ed: 
 .address 0x400AEE
-.tainted-regs {RBP => [%000003f4]}
 000006fd: #64 := mem[RBP - 0x44, el]:u32
 .address 0x400AEE
-.tainted-regs {RBP => [%000003f4]}
 00000700: CF := mem[RBP - 0x44, el]:u32 < 0
 .address 0x400AEE
-.tainted-regs {RBP => [%000003f4]}
 00000703: OF := high:1[mem[RBP - 0x44, el]:u32 & (mem[RBP - 0x44, el]:u32 ^ #64)]
 .address 0x400AEE
-.tainted-regs {RBP => [%000003f4]}
 00000706: AF := 0x10 = (0x10 & (#64 ^ mem[RBP - 0x44, el]:u32))
 .address 0x400AEE
 00000709: PF := ~low:1[let $1 = #64 >> 4 ^ #64 in let $2 = $1 >> 2 ^ $1 in
@@ -900,7 +874,6 @@ $2 >> 1 ^ $2]
 .address 0x400AF4
 000008f6: 
 .address 0x400AF4
-.tainted-regs {RBP => [%000003f4]}
 000008fb: mem := mem with [RBP - 0x3C, el]:u32 <- 0
 .address 0x400AFB
 00000903: goto %000008ff
@@ -908,19 +881,14 @@ $2 >> 1 ^ $2]
 .address 0x400B34
 000008ff: 
 .address 0x400B34
-.tainted-regs {RBP => [%000003f4]}
 00000909: RAX := pad:64[mem[RBP - 0x3C, el]:u32]
 .address 0x400B37
-.tainted-regs {RBP => [%000003f4]}
 00000916: #90 := low:32[RAX] - mem[RBP - 0x34, el]:u32
 .address 0x400B37
-.tainted-regs {RBP => [%000003f4]}
 00000919: CF := low:32[RAX] < mem[RBP - 0x34, el]:u32
 .address 0x400B37
-.tainted-regs {RBP => [%000003f4]}
 0000091c: OF := high:1[(low:32[RAX] ^ mem[RBP - 0x34, el]:u32) & (low:32[RAX] ^ #90)]
 .address 0x400B37
-.tainted-regs {RBP => [%000003f4]}
 0000091f: AF := 0x10 = (0x10 & (#90 ^ low:32[RAX] ^ mem[RBP - 0x34, el]:u32))
 .address 0x400B37
 00000922: PF := ~low:1[let $1 = #90 >> 4 ^ #90 in let $2 = $1 >> 2 ^ $1 in
@@ -936,10 +904,8 @@ $2 >> 1 ^ $2]
 .address 0x400B3C
 000009fb: 
 .address 0x400B3C
-.tainted-regs {RBP => [%000003f4]}
 00000a00: mem := mem with [RBP - 0x34, el]:u32 <- 0
 .address 0x400B43
-.tainted-regs {RBP => [%000003f4]}
 00000a07: mem := mem with [RBP - 0x38, el]:u32 <- 0xFFFFFFFF
 .address 0x400B4A
 00000a0f: goto %00000a0b
@@ -947,10 +913,8 @@ $2 >> 1 ^ $2]
 .address 0x400B96
 00000a0b: 
 .address 0x400B96
-.tainted-regs {RBP => [%000003f4]}
 00000a15: RAX := pad:64[mem[RBP - 0x34, el]:u32]
 .address 0x400B99
-.tainted-regs {RBP => [%000003f4]}
 00000a1c: RAX := pad:64[pad:32[mem[RBP + RAX - 0x20]]]
 .address 0x400B9E
 00000a29: #101 := low:8[RAX]
@@ -974,32 +938,26 @@ $2 >> 1 ^ $2]
 .address 0x400BA2
 00000bd9: 
 .address 0x400BA2
-.tainted-regs {RBP => [%000003f4]}
 00000bde: RAX := pad:64[mem[RBP - 0x38, el]:u32]
 .address 0x400BA5
 00000be5: RAX := pad:64[~low:32[RAX]]
 .address 0x400BA7
 00000bec: RDX := pad:64[low:32[RAX]]
 .address 0x400BA9
-.tainted-regs {RBP => [%000003f4]}
 00000bf3: RAX := low:64[RBP - 0x20]
 .address 0x400BAD
 00000bfa: RSI := 0x400D4A
 .address 0x400BB2
-.tainted-regs {RAX => [%000003f4]}
 00000c01: RDI := RAX
 .address 0x400BB5
 00000c08: RAX := 0
 .address 0x400BBA
-.tainted-regs {RSP => [%000003f4]}
 00000c12: RSP := RSP - 8
 .address 0x400BBA
-.tainted-regs {RSP => [%000003f4]}
 00000c15: mem := mem with [RSP, el]:u64 <- 0x400BBF
 .address 0x400BBA
 00001470: sprintf_format := RSI
 .address 0x400BBA
-.tainted-regs {RDI => [%000003f4]}
 00001471: sprintf_str := RDI
 .address 0x400BBA
 00000c18: call @sprintf with return %00000c1a
@@ -1007,35 +965,30 @@ $2 >> 1 ^ $2]
 .address 0x400BBF
 00000c1a: 
 .address 0x400BBA
-.tainted-regs {RDI => [%000003f4]}
 00001476: sprintf_str := RDI
 .address 0x400BBA
 00001475: sprintf_result := RAX
 .address 0x400BBF
-.tainted-regs {RBP => [%000003f4]}
 00000c1f: RCX := low:64[RBP - 0x20]
 .address 0x400BC3
-.tainted-regs {RBP => [%000003f4]}
 00000c26: RAX := mem[RBP - 0x50, el]:u64
 .address 0x400BC7
 00000c2d: RDX := 8
 .address 0x400BCC
-.tainted-regs {RCX => [%000003f4]}
 00000c34: RSI := RCX
 .address 0x400BCF
+.tainted-regs {RAX => [%00000579]}
 00000c3b: RDI := RAX
 .address 0x400BD2
-.tainted-regs {RSP => [%000003f4]}
 00000c45: RSP := RSP - 8
 .address 0x400BD2
-.tainted-regs {RSP => [%000003f4]}
 00000c48: mem := mem with [RSP, el]:u64 <- 0x400BD7
 .address 0x400BD2
-.tainted-regs {RSI => [%000003f4]}
 00001472: strncat_src := RSI
 .address 0x400BD2
 00001473: strncat_n := RDX
 .address 0x400BD2
+.tainted-regs {RDI => [%00000579]}
 00001474: strncat_dst := RDI
 .address 0x400BD2
 00000c4b: call @strncat with return %00000c4d
@@ -1043,11 +996,12 @@ $2 >> 1 ^ $2]
 .address 0x400BD7
 00000c4d: 
 .address 0x400BD2
+.tainted-regs {RDI => [%00000579]}
 00001478: strncat_dst := RDI
 .address 0x400BD2
+.tainted-regs {RAX => [%00000579]}
 00001477: strncat_result := RAX
 .address 0x400BD8
-.tainted-regs {RBP => [%000003f4]}
 00000c55: RAX := mem[RBP - 8, el]:u64
 .address 0x400BDC
 00000c62: RAX := RAX ^ mem[FS_BASE + 0x28, el]:u64
@@ -1071,10 +1025,8 @@ $2 >> 1 ^ $2]
 .address 0x400BE7
 00000ef0: 
 .address 0x400BE7
-.tainted-regs {RSP => [%000003f4]}
 00000ef8: RSP := RSP - 8
 .address 0x400BE7
-.tainted-regs {RSP => [%000003f4]}
 00000efb: mem := mem with [RSP, el]:u64 <- 0x400BEC
 .address 0x400BE7
 00000efe: call @__stack_chk_fail with return %00000c78
@@ -1082,19 +1034,14 @@ $2 >> 1 ^ $2]
 .address 0x400BEC
 00000c78: 
 .address 0x400BEC
-.tainted-regs {RBP => [%000003f4]}
 00000c8a: RSP := RBP
 .address 0x400BEC
-.tainted-regs {RSP => [%000003f4]}
 00000c8d: RBP := mem[RSP, el]:u64
 .address 0x400BEC
-.tainted-regs {RSP => [%000003f4]}
 00000c90: RSP := RSP + 8
 .address 0x400BED
-.tainted-regs {RSP => [%000003f4]}
 00000c99: #120 := mem[RSP, el]:u64
 .address 0x400BED
-.tainted-regs {RSP => [%000003f4]}
 00000c9c: RSP := RSP + 8
 .address 0x400BED
 00000ca0: call #120 with noreturn
@@ -1102,21 +1049,16 @@ $2 >> 1 ^ $2]
 .address 0x400B4C
 00000a3f: 
 .address 0x400B4C
-.tainted-regs {RBP => [%000003f4]}
 00000a4f: RAX := pad:64[mem[RBP - 0x34, el]:u32]
 .address 0x400B4F
-.tainted-regs {RBP => [%000003f4]}
 00000a56: RAX := pad:64[pad:32[mem[RBP + RAX - 0x20]]]
 .address 0x400B54
 00000a5d: RAX := pad:64[extend:32[low:8[RAX]]]
 .address 0x400B57
-.tainted-regs {RBP => [%000003f4]}
 00000a64: mem := mem with [RBP - 0x30, el]:u32 <- low:32[RAX]
 .address 0x400B5A
-.tainted-regs {RBP => [%000003f4]}
 00000a6b: RAX := pad:64[mem[RBP - 0x30, el]:u32]
 .address 0x400B5D
-.tainted-regs {RBP => [%000003f4]}
 00000a78: mem := mem
                      with [RBP - 0x38, el]:u32 <- mem[RBP - 0x38, el]:u32 ^ low:32[RAX]
 .address 0x400B5D
@@ -1126,17 +1068,13 @@ $2 >> 1 ^ $2]
 .address 0x400B5D
 00000a81: AF := unknown[bits]:u1
 .address 0x400B5D
-.tainted-regs {RBP => [%000003f4]}
 00000a84: PF := ~low:1[let $1 = mem[RBP - 0x38, el]:u32 >> 4 ^ mem[RBP - 0x38, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B5D
-.tainted-regs {RBP => [%000003f4]}
 00000a87: SF := high:1[mem[RBP - 0x38, el]:u32]
 .address 0x400B5D
-.tainted-regs {RBP => [%000003f4]}
 00000a8a: ZF := 0 = mem[RBP - 0x38, el]:u32
 .address 0x400B60
-.tainted-regs {RBP => [%000003f4]}
 00000a91: mem := mem with [RBP - 0x3C, el]:u32 <- 8
 .address 0x400B67
 00000a99: goto %00000a95
@@ -1144,16 +1082,12 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B8C
 00000a95: 
 .address 0x400B8C
-.tainted-regs {RBP => [%000003f4]}
 00000aa5: #104 := mem[RBP - 0x3C, el]:u32
 .address 0x400B8C
-.tainted-regs {RBP => [%000003f4]}
 00000aa8: CF := mem[RBP - 0x3C, el]:u32 < 0
 .address 0x400B8C
-.tainted-regs {RBP => [%000003f4]}
 00000aab: OF := high:1[mem[RBP - 0x3C, el]:u32 & (mem[RBP - 0x3C, el]:u32 ^ #104)]
 .address 0x400B8C
-.tainted-regs {RBP => [%000003f4]}
 00000aae: AF := 0x10 = (0x10 & (#104 ^ mem[RBP - 0x3C, el]:u32))
 .address 0x400B8C
 00000ab1: PF := ~low:1[let $1 = #104 >> 4 ^ #104 in let $2 = $1 >> 2 ^ $1 in
@@ -1169,37 +1103,28 @@ $2 >> 1 ^ $2]
 .address 0x400B92
 00000bb6: 
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bc2: #116 := mem[RBP - 0x34, el]:u32
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bc5: mem := mem with [RBP - 0x34, el]:u32 <- mem[RBP - 0x34, el]:u32 + 1
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bc8: CF := mem[RBP - 0x34, el]:u32 < #116
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bcb: OF := ~high:1[#116] & (high:1[#116] | high:1[mem[RBP - 0x34, el]:u32]) & ~(
 high:1[#116] & high:1[mem[RBP - 0x34, el]:u32])
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bce: AF := 0x10 = (0x10 & (mem[RBP - 0x34, el]:u32 ^ #116 ^ 1))
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bd1: PF := ~low:1[let $1 = mem[RBP - 0x34, el]:u32 >> 4 ^ mem[RBP - 0x34, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bd4: SF := high:1[mem[RBP - 0x34, el]:u32]
 .address 0x400B92
-.tainted-regs {RBP => [%000003f4]}
 00000bd7: ZF := 0 = mem[RBP - 0x34, el]:u32
 00001437: goto %00000a0b
 
 .address 0x400B69
 00000abb: 
 .address 0x400B69
-.tainted-regs {RBP => [%000003f4]}
 00000acb: RAX := pad:64[mem[RBP - 0x38, el]:u32]
 .address 0x400B6C
 00000ad8: RAX := pad:64[low:32[RAX] & 1]
@@ -1234,10 +1159,8 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B6F
 00000b0d: ZF := 0 = low:32[RAX]
 .address 0x400B71
-.tainted-regs {RBP => [%000003f4]}
 00000b14: mem := mem with [RBP - 0x2C, el]:u32 <- low:32[RAX]
 .address 0x400B74
-.tainted-regs {RBP => [%000003f4]}
 00000b1b: RAX := pad:64[mem[RBP - 0x38, el]:u32]
 .address 0x400B77
 00000b29: #109 := low:32[RAX]
@@ -1259,7 +1182,6 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B79
 00000b45: RDX := pad:64[low:32[RAX]]
 .address 0x400B7B
-.tainted-regs {RBP => [%000003f4]}
 00000b4c: RAX := pad:64[mem[RBP - 0x2C, el]:u32]
 .address 0x400B7E
 00000b59: RAX := pad:64[low:32[RAX] & 0xEDB88320]
@@ -1292,47 +1214,35 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B83
 00000b8a: ZF := 0 = low:32[RAX]
 .address 0x400B85
-.tainted-regs {RBP => [%000003f4]}
 00000b91: mem := mem with [RBP - 0x38, el]:u32 <- low:32[RAX]
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000b9f: #113 := mem[RBP - 0x3C, el]:u32
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000ba2: mem := mem with [RBP - 0x3C, el]:u32 <- mem[RBP - 0x3C, el]:u32 - 1
 .address 0x400B88
 00000ba5: CF := #113 < 1
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000ba8: OF := high:1[(#113 ^ 1) & (#113 ^ mem[RBP - 0x3C, el]:u32)]
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000bab: AF := 0x10 = (0x10 & (mem[RBP - 0x3C, el]:u32 ^ #113 ^ 1))
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000bae: PF := ~low:1[let $1 = mem[RBP - 0x3C, el]:u32 >> 4 ^ mem[RBP - 0x3C, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000bb1: SF := high:1[mem[RBP - 0x3C, el]:u32]
 .address 0x400B88
-.tainted-regs {RBP => [%000003f4]}
 00000bb4: ZF := 0 = mem[RBP - 0x3C, el]:u32
 00001438: goto %00000a95
 
 .address 0x400AFD
 0000092c: 
 .address 0x400AFD
-.tainted-regs {RBP => [%000003f4]}
 0000093c: RAX := pad:64[mem[RBP - 0x3C, el]:u32]
 .address 0x400B00
-.tainted-regs {RBP => [%000003f4]}
 00000943: RAX := pad:64[pad:32[mem[RBP + RAX - 0x20]]]
 .address 0x400B05
-.tainted-regs {RBP => [%000003f4]}
 0000094a: mem := mem with [RBP - 0x3D] <- low:8[RAX]
 .address 0x400B08
-.tainted-regs {RBP => [%000003f4]}
 00000951: RAX := pad:64[mem[RBP - 0x34, el]:u32]
 .address 0x400B0B
 0000095f: #92 := low:32[RAX]
@@ -1354,83 +1264,61 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B0E
 0000097b: RAX := pad:64[low:32[RAX]]
 .address 0x400B10
-.tainted-regs {RBP => [%000003f4]}
 00000982: RDX := pad:64[pad:32[mem[RBP + RAX - 0x20]]]
 .address 0x400B15
-.tainted-regs {RBP => [%000003f4]}
 00000989: RAX := pad:64[mem[RBP - 0x3C, el]:u32]
 .address 0x400B18
-.tainted-regs {RBP => [%000003f4]}
 00000990: mem := mem with [RBP + RAX - 0x20] <- low:8[RDX]
 .address 0x400B1C
-.tainted-regs {RBP => [%000003f4]}
 00000997: RAX := pad:64[mem[RBP - 0x34, el]:u32]
 .address 0x400B1F
 0000099e: RDX := pad:64[low:32[RAX - 1]]
 .address 0x400B22
-.tainted-regs {RBP => [%000003f4]}
 000009a5: RAX := pad:64[pad:32[mem[RBP - 0x3D]]]
 .address 0x400B26
 000009ac: RDX := pad:64[low:32[RDX]]
 .address 0x400B28
-.tainted-regs {RBP => [%000003f4]}
 000009b3: mem := mem with [RBP + RDX - 0x20] <- low:8[RAX]
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009c1: #95 := mem[RBP - 0x34, el]:u32
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009c4: mem := mem with [RBP - 0x34, el]:u32 <- mem[RBP - 0x34, el]:u32 - 1
 .address 0x400B2C
 000009c7: CF := #95 < 1
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009ca: OF := high:1[(#95 ^ 1) & (#95 ^ mem[RBP - 0x34, el]:u32)]
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009cd: AF := 0x10 = (0x10 & (mem[RBP - 0x34, el]:u32 ^ #95 ^ 1))
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009d0: PF := ~low:1[let $1 = mem[RBP - 0x34, el]:u32 >> 4 ^ mem[RBP - 0x34, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009d3: SF := high:1[mem[RBP - 0x34, el]:u32]
 .address 0x400B2C
-.tainted-regs {RBP => [%000003f4]}
 000009d6: ZF := 0 = mem[RBP - 0x34, el]:u32
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009e4: #98 := mem[RBP - 0x3C, el]:u32
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009e7: mem := mem with [RBP - 0x3C, el]:u32 <- mem[RBP - 0x3C, el]:u32 + 1
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009ea: CF := mem[RBP - 0x3C, el]:u32 < #98
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009ed: OF := ~high:1[#98] & (high:1[#98] | high:1[mem[RBP - 0x3C, el]:u32]) & ~(
 high:1[#98] & high:1[mem[RBP - 0x3C, el]:u32])
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009f0: AF := 0x10 = (0x10 & (mem[RBP - 0x3C, el]:u32 ^ #98 ^ 1))
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009f3: PF := ~low:1[let $1 = mem[RBP - 0x3C, el]:u32 >> 4 ^ mem[RBP - 0x3C, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009f6: SF := high:1[mem[RBP - 0x3C, el]:u32]
 .address 0x400B30
-.tainted-regs {RBP => [%000003f4]}
 000009f9: ZF := 0 = mem[RBP - 0x3C, el]:u32
 00001439: goto %000008ff
 
 .address 0x400AAB
 00000713: 
 .address 0x400AAB
-.tainted-regs {RBP => [%000003f4]}
 00000723: RCX := pad:64[mem[RBP - 0x44, el]:u32]
 .address 0x400AAE
 0000072a: RDX := 0xAAAAAAAB
@@ -1537,7 +1425,6 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400AC3
 00000805: RDX := pad:64[low:32[RDX]]
 .address 0x400AC5
-.tainted-regs {RBP => [%000003f4]}
 0000080c: RAX := mem[RBP - 0x28, el]:u64
 .address 0x400AC9
 0000081b: #78 := RAX
@@ -1562,13 +1449,10 @@ $2 >> 1 ^ $2]
 .address 0x400ACC
 0000083a: RDX := pad:64[pad:32[mem[RAX]]]
 .address 0x400ACF
-.tainted-regs {RBP => [%000003f4]}
 00000841: RAX := pad:64[mem[RBP - 0x34, el]:u32]
 .address 0x400AD2
-.tainted-regs {RBP => [%000003f4]}
 00000848: mem := mem with [RBP + RAX - 0x20] <- low:8[RDX]
 .address 0x400AD6
-.tainted-regs {RBP => [%000003f4]}
 0000084f: RAX := pad:64[mem[RBP - 0x44, el]:u32]
 .address 0x400AD9
 0000085d: #81 := low:32[RAX]
@@ -1628,33 +1512,24 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400AE5
 000008ca: OF := high:1[#85]
 .address 0x400AE7
-.tainted-regs {RBP => [%000003f4]}
 000008d1: mem := mem with [RBP - 0x44, el]:u32 <- low:32[RAX]
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008df: #87 := mem[RBP - 0x34, el]:u32
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008e2: mem := mem with [RBP - 0x34, el]:u32 <- mem[RBP - 0x34, el]:u32 + 1
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008e5: CF := mem[RBP - 0x34, el]:u32 < #87
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008e8: OF := ~high:1[#87] & (high:1[#87] | high:1[mem[RBP - 0x34, el]:u32]) & ~(
 high:1[#87] & high:1[mem[RBP - 0x34, el]:u32])
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008eb: AF := 0x10 = (0x10 & (mem[RBP - 0x34, el]:u32 ^ #87 ^ 1))
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008ee: PF := ~low:1[let $1 = mem[RBP - 0x34, el]:u32 >> 4 ^ mem[RBP - 0x34, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008f1: SF := high:1[mem[RBP - 0x34, el]:u32]
 .address 0x400AEA
-.tainted-regs {RBP => [%000003f4]}
 000008f4: ZF := 0 = mem[RBP - 0x34, el]:u32
 0000143a: goto %000006ed
 
@@ -1662,7 +1537,6 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x4008D6
 00001412: sub main(main_argc, main_argv, main_result)
 00001450: main_argc :: in u32 = RDI
-.tainted-regs {RSI => [%000003f7]}
 00001451: main_argv :: in out u64 = RSI
 00001452: main_result :: out u32 = RAX
 .address 0x4008D6
@@ -1749,19 +1623,14 @@ $2 >> 1 ^ $2]
 .address 0x40091B
 000003e7: RDI := RAX
 .address 0x40091E
-.tainted-regs {RSP => [%000003f1]}
 000003f1: RSP := RSP - 8
 .address 0x40091E
-.tainted-regs {RSP => [%000003f1, %000003f4], mem => [%000003f4]}
 000003f4: mem := mem with [RSP, el]:u64 <- 0x400923
 .address 0x40091E
-.tainted-regs {RSI => [%000003f7]}
 0000147a: fgets_size := RSI
 .address 0x40091E
-.tainted-regs {RDI => [%000003f7]}
 0000147b: fgets_s := RDI
 .address 0x40091E
-.tainted-regs {RDX => [%000003f7]}
 0000147c: fgets_stream := RDX
 .address 0x40091E
 000003f7: call @fgets with return %000003f9
@@ -1769,16 +1638,12 @@ $2 >> 1 ^ $2]
 .address 0x400923
 000003f9: 
 .address 0x40091E
-.tainted-regs {RDX => [%000003f7]}
 0000148d: fgets_stream := RDX
 .address 0x40091E
-.tainted-regs {RDI => [%000003f7]}
 0000148c: fgets_s := RDI
 .address 0x40091E
-.tainted-regs {RAX => [%000003f7]}
 0000148b: fgets_result := RAX
 .address 0x400923
-.tainted-regs {RAX => [%000003f7]}
 00000404: #38 := RAX
 .address 0x400923
 00000407: OF := 0
@@ -1787,17 +1652,13 @@ $2 >> 1 ^ $2]
 .address 0x400923
 0000040d: AF := unknown[bits]:u1
 .address 0x400923
-.tainted-regs {$1 => [%000003f7], $2 => [%000003f7], #38 => [%000003f7]}
 00000410: PF := ~low:1[let $1 = #38 >> 4 ^ #38 in let $2 = $1 >> 2 ^ $1 in
 $2 >> 1 ^ $2]
 .address 0x400923
-.tainted-regs {#38 => [%000003f7]}
 00000413: SF := high:1[#38]
 .address 0x400923
-.tainted-regs {#38 => [%000003f7]}
 00000416: ZF := 0 = #38
 .address 0x400926
-.tainted-regs {ZF => [%000003f7]}
 00000420: when ~ZF goto %0000041a
 0000143b: goto %000010a7
 
@@ -1808,10 +1669,8 @@ $2 >> 1 ^ $2]
 .address 0x400940
 00000431: RDI := RAX
 .address 0x400943
-.tainted-regs {RSP => [%000003f4]}
 0000043b: RSP := RSP - 8
 .address 0x400943
-.tainted-regs {RSP => [%000003f4]}
 0000043e: mem := mem with [RSP, el]:u64 <- 0x400948
 .address 0x400943
 0000147d: strlen_s := RDI
@@ -1952,10 +1811,8 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400990
 00000569: RDI := RAX
 .address 0x400993
-.tainted-regs {RSP => [%000003f4]}
 00000573: RSP := RSP - 8
 .address 0x400993
-.tainted-regs {RSP => [%000003f4]}
 00000576: mem := mem with [RSP, el]:u64 <- 0x400998
 .address 0x400993
 0000147e: malloc_size := RDI
@@ -1965,25 +1822,33 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400998
 0000057b: 
 .address 0x400993
+.tainted-regs {RAX => [%00000579]}
 0000148f: malloc_result := RAX
 .address 0x400998
+.tainted-regs {RAX => [%00000579]}
 00000580: mem := mem with [RBP - 0x38, el]:u64 <- RAX
 .address 0x40099C
 0000058d: #56 := mem[RBP - 0x38, el]:u64
 .address 0x40099C
 00000590: CF := mem[RBP - 0x38, el]:u64 < 0
 .address 0x40099C
+.tainted-regs {#56 => [%00000579]}
 00000593: OF := high:1[mem[RBP - 0x38, el]:u64 & (mem[RBP - 0x38, el]:u64 ^ #56)]
 .address 0x40099C
+.tainted-regs {#56 => [%00000579]}
 00000596: AF := 0x10 = (0x10 & (#56 ^ mem[RBP - 0x38, el]:u64))
 .address 0x40099C
+.tainted-regs {$1 => [%00000579], $2 => [%00000579], #56 => [%00000579]}
 00000599: PF := ~low:1[let $1 = #56 >> 4 ^ #56 in let $2 = $1 >> 2 ^ $1 in
 $2 >> 1 ^ $2]
 .address 0x40099C
+.tainted-regs {#56 => [%00000579]}
 0000059c: SF := high:1[#56]
 .address 0x40099C
+.tainted-regs {#56 => [%00000579]}
 0000059f: ZF := 0 = #56
 .address 0x4009A1
+.tainted-regs {ZF => [%00000579]}
 000005a9: when ~ZF goto %000005a3
 0000143d: goto %00001075
 
@@ -1996,18 +1861,18 @@ $2 >> 1 ^ $2]
 .address 0x4009B4
 000005c1: RSI := 0
 .address 0x4009B9
+.tainted-regs {RAX => [%00000579]}
 000005c8: RDI := RAX
 .address 0x4009BC
-.tainted-regs {RSP => [%000003f4]}
 000005d2: RSP := RSP - 8
 .address 0x4009BC
-.tainted-regs {RSP => [%000003f4]}
 000005d5: mem := mem with [RSP, el]:u64 <- 0x4009C1
 .address 0x4009BC
 0000147f: memset_c := RSI
 .address 0x4009BC
 00001480: memset_n := RDX
 .address 0x4009BC
+.tainted-regs {RDI => [%00000579]}
 00001481: memset_buf := RDI
 .address 0x4009BC
 000005d8: call @memset with return %000005da
@@ -2015,8 +1880,10 @@ $2 >> 1 ^ $2]
 .address 0x4009C1
 000005da: 
 .address 0x4009BC
+.tainted-regs {RDI => [%00000579]}
 00001491: memset_buf := RDI
 .address 0x4009BC
+.tainted-regs {RAX => [%00000579]}
 00001490: memset_result := RAX
 .address 0x4009C1
 000005df: mem := mem with [RBP - 0x44, el]:u32 <- 0
@@ -2026,19 +1893,14 @@ $2 >> 1 ^ $2]
 .address 0x4009E9
 000005e3: 
 .address 0x4009E9
-.tainted-regs {RBP => [%000003f4]}
 000005ed: RAX := pad:64[mem[RBP - 0x44, el]:u32]
 .address 0x4009EC
-.tainted-regs {RBP => [%000003f4]}
 000005fa: #58 := low:32[RAX] - mem[RBP - 0x40, el]:u32
 .address 0x4009EC
-.tainted-regs {RBP => [%000003f4]}
 000005fd: CF := low:32[RAX] < mem[RBP - 0x40, el]:u32
 .address 0x4009EC
-.tainted-regs {RBP => [%000003f4]}
 00000600: OF := high:1[(low:32[RAX] ^ mem[RBP - 0x40, el]:u32) & (low:32[RAX] ^ #58)]
 .address 0x4009EC
-.tainted-regs {RBP => [%000003f4]}
 00000603: AF := 0x10 = (0x10 & (#58 ^ low:32[RAX] ^ mem[RBP - 0x40, el]:u32))
 .address 0x4009EC
 00000606: PF := ~low:1[let $1 = #58 >> 4 ^ #58 in let $2 = $1 >> 2 ^ $1 in
@@ -2054,17 +1916,14 @@ $2 >> 1 ^ $2]
 .address 0x4009F1
 00000f23: 
 .address 0x4009F1
-.tainted-regs {RBP => [%000003f4]}
 00000f28: RAX := mem[RBP - 0x38, el]:u64
 .address 0x4009F5
 00000f2f: RSI := 0x400CA8
 .address 0x4009FA
 00000f36: RDI := RAX
 .address 0x4009FD
-.tainted-regs {RSP => [%000003f4]}
 00000f40: RSP := RSP - 8
 .address 0x4009FD
-.tainted-regs {RSP => [%000003f4]}
 00000f43: mem := mem with [RSP, el]:u64 <- 0x400A02
 .address 0x4009FD
 00001482: strcmp_s1 := RDI
@@ -2099,20 +1958,16 @@ $2 >> 1 ^ $2]
 .address 0x400A2B
 00000f69: 
 .address 0x400A2B
-.tainted-regs {RBP => [%000003f4]}
 00000f79: RAX := low:64[RBP - 0x30]
 .address 0x400A2F
-.tainted-regs {RAX => [%000003f4]}
 00000f80: RSI := RAX
 .address 0x400A32
 00000f87: RDI := 0x400D20
 .address 0x400A37
 00000f8e: RAX := 0
 .address 0x400A3C
-.tainted-regs {RSP => [%000003f4]}
 00000f97: RSP := RSP - 8
 .address 0x400A3C
-.tainted-regs {RSP => [%000003f4]}
 00000f9a: mem := mem with [RSP, el]:u64 <- 0x400A41
 .address 0x400A3C
 00001484: printf_format := RDI
@@ -2124,15 +1979,12 @@ $2 >> 1 ^ $2]
 .address 0x400A3C
 00001493: printf_result := RAX
 .address 0x400A41
-.tainted-regs {RBP => [%000003f4]}
 00000fa4: RAX := mem[RBP - 0x38, el]:u64
 .address 0x400A45
 00000fab: RDI := RAX
 .address 0x400A48
-.tainted-regs {RSP => [%000003f4]}
 00000fb5: RSP := RSP - 8
 .address 0x400A48
-.tainted-regs {RSP => [%000003f4]}
 00000fb8: mem := mem with [RSP, el]:u64 <- 0x400A4D
 .address 0x400A48
 00001485: free_ptr := RDI
@@ -2144,7 +1996,6 @@ $2 >> 1 ^ $2]
 .address 0x400A48
 00001494: free_ptr := RDI
 .address 0x400A4D
-.tainted-regs {RBP => [%000003f4]}
 00000fc2: mem := mem with [RBP - 0x38, el]:u64 <- 0
 .address 0x400A55
 00000fc9: RAX := 0
@@ -2155,10 +2006,8 @@ $2 >> 1 ^ $2]
 .address 0x400A06
 00001031: RDI := 0x400C8A
 .address 0x400A0B
-.tainted-regs {RSP => [%000003f4]}
 0000103b: RSP := RSP - 8
 .address 0x400A0B
-.tainted-regs {RSP => [%000003f4]}
 0000103e: mem := mem with [RSP, el]:u64 <- 0x400A10
 .address 0x400A0B
 00001486: puts_s := RDI
@@ -2170,15 +2019,12 @@ $2 >> 1 ^ $2]
 .address 0x400A0B
 00001495: puts_result := RAX
 .address 0x400A10
-.tainted-regs {RBP => [%000003f4]}
 00001048: RAX := mem[RBP - 0x38, el]:u64
 .address 0x400A14
 0000104f: RDI := RAX
 .address 0x400A17
-.tainted-regs {RSP => [%000003f4]}
 00001058: RSP := RSP - 8
 .address 0x400A17
-.tainted-regs {RSP => [%000003f4]}
 0000105b: mem := mem with [RSP, el]:u64 <- 0x400A1C
 .address 0x400A17
 00001487: free_ptr := RDI
@@ -2190,7 +2036,6 @@ $2 >> 1 ^ $2]
 .address 0x400A17
 00001496: free_ptr := RDI
 .address 0x400A1C
-.tainted-regs {RBP => [%000003f4]}
 00001065: mem := mem with [RBP - 0x38, el]:u64 <- 0
 .address 0x400A24
 0000106c: RAX := 0
@@ -2200,27 +2045,23 @@ $2 >> 1 ^ $2]
 .address 0x4009CA
 00000610: 
 .address 0x4009CA
-.tainted-regs {RBP => [%000003f4]}
 00000620: RAX := pad:64[mem[RBP - 0x44, el]:u32]
 .address 0x4009CD
 00000627: RAX := extend:64[low:32[RAX]]
 .address 0x4009CF
-.tainted-regs {RBP => [%000003f4]}
 0000062e: RAX := pad:64[pad:32[mem[RBP + RAX - 0x30]]]
 .address 0x4009D4
 00000635: RAX := pad:64[extend:32[low:8[RAX]]]
 .address 0x4009D7
-.tainted-regs {RBP => [%000003f4]}
 0000063c: RDX := mem[RBP - 0x38, el]:u64
 .address 0x4009DB
+.tainted-regs {RDX => [%00000579]}
 00000643: RSI := RDX
 .address 0x4009DE
 0000064a: RDI := pad:64[low:32[RAX]]
 .address 0x4009E0
-.tainted-regs {RSP => [%000003f4]}
 00000654: RSP := RSP - 8
 .address 0x4009E0
-.tainted-regs {RSP => [%000003f4]}
 00000657: mem := mem with [RSP, el]:u64 <- 0x4009E5
 .address 0x4009E0
 0000065a: call @hash with return %00000f00
@@ -2228,30 +2069,22 @@ $2 >> 1 ^ $2]
 .address 0x4009E5
 00000f00: 
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f0c: #148 := mem[RBP - 0x44, el]:u32
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f0f: mem := mem with [RBP - 0x44, el]:u32 <- mem[RBP - 0x44, el]:u32 + 1
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f12: CF := mem[RBP - 0x44, el]:u32 < #148
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f15: OF := ~high:1[#148] & (high:1[#148] | high:1[mem[RBP - 0x44, el]:u32]) & ~(
 high:1[#148] & high:1[mem[RBP - 0x44, el]:u32])
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f18: AF := 0x10 = (0x10 & (mem[RBP - 0x44, el]:u32 ^ #148 ^ 1))
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f1b: PF := ~low:1[let $1 = mem[RBP - 0x44, el]:u32 >> 4 ^ mem[RBP - 0x44, el]:u32 in
 let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f1e: SF := high:1[mem[RBP - 0x44, el]:u32]
 .address 0x4009E5
-.tainted-regs {RBP => [%000003f4]}
 00000f21: ZF := 0 = mem[RBP - 0x44, el]:u32
 00001441: goto %000005e3
 
@@ -2267,10 +2100,8 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x40095C
 00001088: RDI := 0x400C8A
 .address 0x400961
-.tainted-regs {RSP => [%000003f4]}
 00001091: RSP := RSP - 8
 .address 0x400961
-.tainted-regs {RSP => [%000003f4]}
 00001094: mem := mem with [RSP, el]:u64 <- 0x400966
 .address 0x400961
 00001488: puts_s := RDI
@@ -2291,10 +2122,8 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400928
 000010ac: RDI := 0x400C8A
 .address 0x40092D
-.tainted-regs {RSP => [%000003f4]}
 000010b5: RSP := RSP - 8
 .address 0x40092D
-.tainted-regs {RSP => [%000003f4]}
 000010b8: mem := mem with [RSP, el]:u64 <- 0x400932
 .address 0x40092D
 00001489: puts_s := RDI
@@ -2304,7 +2133,6 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400932
 000010bd: 
 .address 0x40092D
-.tainted-regs {RAX => [%000003f7]}
 00001498: puts_result := RAX
 .address 0x400932
 000010c2: RAX := 0
@@ -2314,7 +2142,6 @@ let $2 = $1 >> 2 ^ $1 in $2 >> 1 ^ $2]
 .address 0x400A5A
 00000fcb: 
 .address 0x400A5A
-.tainted-regs {RBP => [%000003f4]}
 00000fd0: RCX := mem[RBP - 8, el]:u64
 .address 0x400A5E
 00000fdd: RCX := RCX ^ mem[FS_BASE + 0x28, el]:u64
@@ -2338,10 +2165,8 @@ $2 >> 1 ^ $2]
 .address 0x400A69
 0000101d: 
 .address 0x400A69
-.tainted-regs {RSP => [%000003f4]}
 00001024: RSP := RSP - 8
 .address 0x400A69
-.tainted-regs {RSP => [%000003f4]}
 00001027: mem := mem with [RSP, el]:u64 <- 0x400A6E
 .address 0x400A69
 0000102a: call @__stack_chk_fail with return %00000ff3
@@ -2349,19 +2174,14 @@ $2 >> 1 ^ $2]
 .address 0x400A6E
 00000ff3: 
 .address 0x400A6E
-.tainted-regs {RBP => [%000003f4]}
 00001005: RSP := RBP
 .address 0x400A6E
-.tainted-regs {RSP => [%000003f4]}
 00001008: RBP := mem[RSP, el]:u64
 .address 0x400A6E
-.tainted-regs {RSP => [%000003f4]}
 0000100b: RSP := RSP + 8
 .address 0x400A6F
-.tainted-regs {RSP => [%000003f4]}
 00001014: #154 := mem[RSP, el]:u64
 .address 0x400A6F
-.tainted-regs {RSP => [%000003f4]}
 00001017: RSP := RSP + 8
 .address 0x400A6F
 0000101b: call #154 with noreturn
@@ -2379,9 +2199,11 @@ $2 >> 1 ^ $2]
 
 .address 0x400750
 0000141c: sub memset(memset_buf, memset_c, memset_n, memset_result)
+.tainted-regs {RDI => [%00000579]}
 00001455: memset_buf :: in out u64 = RDI
 00001456: memset_c :: in u32 = RSI
 00001457: memset_n :: in u64 = RDX
+.tainted-regs {RAX => [%00000579]}
 00001458: memset_result :: out u64 = RAX
 .address 0x400750
 000005ce: 
@@ -2402,7 +2224,6 @@ $2 >> 1 ^ $2]
 .address 0x400710
 0000141e: sub puts(puts_s, puts_result)
 0000145b: puts_s :: in u64 = RDI
-.tainted-regs {RAX => [%000003f7]}
 0000145c: puts_result :: out u32 = RAX
 .address 0x400710
 00001037: 
@@ -2568,7 +2389,6 @@ $2 >> 1 ^ $2]
 
 .address 0x4007C0
 00001422: sub sprintf(sprintf_str, sprintf_format, sprintf_result)
-.tainted-regs {RDI => [%000003f4]}
 0000145d: sprintf_str :: in out u64 = RDI
 0000145e: sprintf_format :: in u64 = RSI
 0000145f: sprintf_result :: out u32 = RAX
@@ -2601,10 +2421,11 @@ $2 >> 1 ^ $2]
 
 .address 0x400760
 00001425: sub strncat(strncat_dst, strncat_src, strncat_n, strncat_result)
+.tainted-regs {RDI => [%00000579]}
 00001465: strncat_dst :: in out u64 = RDI
-.tainted-regs {RSI => [%000003f4]}
 00001466: strncat_src :: in u64 = RSI
 00001467: strncat_n :: in u64 = RDX
+.tainted-regs {RAX => [%00000579]}
 00001468: strncat_result :: out u64 = RAX
 .address 0x400760
 00000c41: 

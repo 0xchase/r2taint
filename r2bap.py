@@ -86,6 +86,16 @@ def r2bap(_):
                 taints[r.cmd("s").strip("\n")] = []
             except Exception as e:
                 print(e)
+        elif cmd[0] == "Tr--":
+            try:
+                for key in taints:
+                    if not key == "malloc":
+                        for e in taints[key]:
+                            r.cmd("CC- @ " + e)
+                            r.cmd("ecH- @ " + e)
+                        taints[key] = []
+            except Exception as e:
+                print(e)
         elif cmd[0] == "Tm":
             try:
                 taint_malloc(cmd[1])
@@ -110,6 +120,15 @@ def r2bap(_):
                 taints["malloc"] = []
             except Exception as e:
                 print(e)
+        elif cmd[0] == "T-":
+            try:
+                for key in taints:
+                    for e in taints[key]:
+                        r.cmd("CC- @ " + e)
+                        r.cmd("ecH- @ " + e)
+                    taints[key] = []
+            except Exception as e:
+                print(e)
         else:
             print(colored("Taint analysis commands using BAP", "yellow"))
             print("| Tm              " + colored("Propogate taint from mallocs and add comments at tainted instructions", "green"))
@@ -119,7 +138,9 @@ def r2bap(_):
             print("| Tr              " + colored("Propogate taint from register at current seek and add comments at tainted instructions", "green"))
             print("| Trc             " + colored("Propogate taint from register at current seek and add comments only at tainted calls", "green"))
             print("| Tr-             " + colored("Remove taints due to register at current seek", "green"))
+            print("| Tr--            " + colored("Remove all taints due to register sources", "green"))
             print("| Trl             " + colored("List taints due to register at current seek", "green"))
+            print("| T-              " + colored("Remove all taint information", "green"))
 
         return 1
 
@@ -276,6 +297,7 @@ def r2bap(_):
                 reg = line.split("{")[1].split("=")[0]
                 r.cmd("s " + last_address)
                 if "call" in r.cmd("pd 1"):
+                    r.cmd("ecHi red")
                     r.cmd("CC-")
                     r.cmd("CC " + reg + "tainted by malloc")
                     taints["malloc"].append(last_address)
