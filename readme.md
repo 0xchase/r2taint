@@ -4,6 +4,8 @@ This plugin is still in development so may be buggy for you.
 
 A plugin for radare2 that adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
 
+Will highlight instructions tainted by sources in blue. Instructions tainted by mallocs are highlighted in red. 
+
 ---
 
 ![](example.gif)
