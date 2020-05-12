@@ -9,7 +9,6 @@ A plugin for radare2 that adds taint analysis using the Binary Analysis Platform
 ---
 
 ## Command List
-### General
 ```
 | T               Show the help
 | Tr[?]           Propogate taint from register and mark tainted instructions
