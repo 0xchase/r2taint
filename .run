@@ -1,1 +1,1 @@
-r2 -i r2bap.py hashmenot
+r2 -i r2taint.py binary
