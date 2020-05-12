@@ -1,10 +1,30 @@
 # r2taint
-A plugin for radare2 that integrates the taint analysis capabilities of the Binary Analysis Platform (BAP) from CMU.
-
+A plugin for radare2 that adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
+---
+![](example.gif)
+---
+## Command List
+### Register tainting
+| Tr[?]           Propogate taint from register and mark tainted instructions
+| Trc             Propogate taint from register and mark tainted calls
+| Trl             List taints due to register
+| Tr-             Remove taints due to register at current seek
+| Tr--            Remove all taints due to register sources
+### Pointer tainting
+| Tp[?]           Propogate taint from pointer and mark tainted instructions
+| Tpc             Propogate taint from pointer and mark tainted calls
+| Tpl             List taints due to register
+| Tp-             Remove taints due to pointer
+| Tp--            Remove all taints due to pointer sources
+### Malloc tainting
+| Tm[?]           Propogate taint from mallocs and mark tainted instructions
+| Tmc             Propogate taint from mallocs and mark tainted calls
+| Tml             List taints from mallocs
+| Tm-             Remove taints due to mallocs
+### Misc
+| Tl              List all taint information
+| T-              Remove all taint information
+---
 ## Todo
- - Add commands for all bap-toolkit tools
  - Tv: Taint variables of current function or by name
  - Tg???: Various graphing commands for taint information
- - Make print annotation count instead of list
-
-![](example.gif)
