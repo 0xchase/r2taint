@@ -1,5 +1,7 @@
 # r2taint
 
+This plugin is still in development so may be buggy for you.
+
 A plugin for radare2 that adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
 
 ---
