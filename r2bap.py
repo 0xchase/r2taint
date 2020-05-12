@@ -197,7 +197,7 @@ def r2bap(_):
         found_taints = []
         print("Running BAP...")
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-reg=" + address,
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
@@ -244,7 +244,7 @@ def r2bap(_):
         found_taints = []
         print("Running BAP...")
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-reg=" + address,
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
@@ -289,7 +289,7 @@ def r2bap(_):
         found_taints = []
         print("Running BAP...")
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-ptr=" + address,
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
@@ -334,7 +334,7 @@ def r2bap(_):
         found_taints = []
         print("Running BAP...")
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-ptr=" + address,
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
@@ -380,7 +380,7 @@ def r2bap(_):
         taints["malloc"] = []
         found_taints = []
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-reg=malloc_result", 
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
@@ -418,7 +418,7 @@ def r2bap(_):
         taints["malloc"] = []
         found_taints = []
         stdout, stderr = subprocess.Popen(
-                ["bap", "./hashmenot", 
+                ["bap", binary, 
                 "--taint-reg=malloc_result", 
                 "--llvm-base=0x400000", 
                 "--propagate-taint", 
