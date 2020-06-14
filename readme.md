@@ -1,8 +1,6 @@
 # r2taint
 
-This plugin is still in development and the code is hacky so it may be buggy for you.
-
-A plugin for radare2 that adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
+This plugin is a hack and should be rewritten. It adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
 
 r2taint will highlight tainted instructions blue. Instructions tainted by mallocs are highlighted in red. 
 
