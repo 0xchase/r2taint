@@ -1,6 +1,6 @@
 # r2taint
 
-This plugin is a hack and should be rewritten. It adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
+This plugin is hacky, the code is terrible, and it should be rewritten. It adds taint analysis using the Binary Analysis Platform (BAP) from CMU.
 
 r2taint will highlight tainted instructions blue. Instructions tainted by mallocs are highlighted in red. 
 
